@@ -1,0 +1,16 @@
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Dominio.dll
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Datos.dll
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Dominio.pdb
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\bin\Debug\Datos.pdb
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\obj\Debug\Presentacion.Login.resources
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\darkx\source\repos\LoginMVC\Presentacion\obj\Debug\Presentacion.pdb

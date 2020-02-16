@@ -1,0 +1,8 @@
+C:\Users\darkx\source\repos\LoginMVC\Dominio\bin\Debug\Dominio.dll
+C:\Users\darkx\source\repos\LoginMVC\Dominio\bin\Debug\Dominio.pdb
+C:\Users\darkx\source\repos\LoginMVC\Dominio\bin\Debug\Datos.dll
+C:\Users\darkx\source\repos\LoginMVC\Dominio\bin\Debug\Datos.pdb
+C:\Users\darkx\source\repos\LoginMVC\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\darkx\source\repos\LoginMVC\Dominio\obj\Debug\Dominio.csproj.CopyComplete
+C:\Users\darkx\source\repos\LoginMVC\Dominio\obj\Debug\Dominio.dll
+C:\Users\darkx\source\repos\LoginMVC\Dominio\obj\Debug\Dominio.pdb
