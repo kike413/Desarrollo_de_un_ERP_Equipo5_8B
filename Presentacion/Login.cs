@@ -89,8 +89,9 @@ namespace Presentacion
             if(txtUsuario.Text != "Usuario")
             {
                 if (txtPass.Text != "Contraseña") {
-                    Usuario user = new Usuario();
-                    var loginValido = user.login(txtUsuario.Text, txtPass.Text);
+                    Usuario user = new Usuario(); //llamada a la clase usuario
+                    //llamada al metodo para validar el login
+                    var loginValido = user.Login(txtUsuario.Text, txtPass.Text);
                     if(loginValido == true)
                     {
                         /*aqui debe hacer referencia a la principal
@@ -99,6 +100,9 @@ namespace Presentacion
                         ventanaP.show();
                         this.hide para ocultar el login
                      */
+                        EstilosGui estilos = new EstilosGui();
+                        estilos.Show();
+                        this.Hide();
                         msgError("Bien alli crack");
                     }
                     else

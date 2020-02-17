@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 namespace Datos
 {
-        public abstract class ConexionSQL
+        public class ConexionSQL
     {
         private readonly string connectionString;
         public ConexionSQL()
@@ -17,5 +17,6 @@ namespace Datos
         {
             return new SqlConnection(connectionString);
         }
+
     }
 }

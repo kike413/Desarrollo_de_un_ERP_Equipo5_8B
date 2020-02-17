@@ -12,7 +12,7 @@ namespace Dominio
     {
         UsuarioDAO usuariodao = new UsuarioDAO();
 
-        public bool login(string usuario,string password)
+        public bool Login(string usuario,string password)
         {
             return usuariodao.Login(usuario,password);
         }

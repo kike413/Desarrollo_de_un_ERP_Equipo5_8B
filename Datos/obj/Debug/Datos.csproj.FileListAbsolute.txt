@@ -3,3 +3,8 @@ C:\Users\darkx\source\repos\LoginMVC\Datos\bin\Debug\Datos.pdb
 C:\Users\darkx\source\repos\LoginMVC\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
 C:\Users\darkx\source\repos\LoginMVC\Datos\obj\Debug\Datos.dll
 C:\Users\darkx\source\repos\LoginMVC\Datos\obj\Debug\Datos.pdb
+C:\Users\darkx\Source\Repos\kike413\Desarrollo_de_un_ERP_Equipo5_8B\Datos\bin\Debug\Datos.dll
+C:\Users\darkx\Source\Repos\kike413\Desarrollo_de_un_ERP_Equipo5_8B\Datos\bin\Debug\Datos.pdb
+C:\Users\darkx\Source\Repos\kike413\Desarrollo_de_un_ERP_Equipo5_8B\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\darkx\Source\Repos\kike413\Desarrollo_de_un_ERP_Equipo5_8B\Datos\obj\Debug\Datos.dll
+C:\Users\darkx\Source\Repos\kike413\Desarrollo_de_un_ERP_Equipo5_8B\Datos\obj\Debug\Datos.pdb
