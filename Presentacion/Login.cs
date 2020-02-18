@@ -94,16 +94,12 @@ namespace Presentacion
                     var loginValido = user.Login(txtUsuario.Text, txtPass.Text);
                     if(loginValido == true)
                     {
-                        /*aqui debe hacer referencia a la principal
-                        creando un objeto del tipo del form principal como
-                        principal ventanaP =  new principal()
-                        ventanaP.show();
-                        this.hide para ocultar el login
-                     */
-                        EstilosGui estilos = new EstilosGui();
-                        estilos.Show();
-                        this.Hide();
-                        msgError("      Bien alli crack");
+                        //aqui debe hacer referencia a la principal creando un objeto del tipo del form principal 
+                        Principal ventanaPrincipal = new Principal();
+                        ventanaPrincipal.Show();
+                        this.Hide();// para ocultar el login
+                     
+                        
                     }
                     else
                     {
