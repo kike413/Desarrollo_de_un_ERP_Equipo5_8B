@@ -41,9 +41,13 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            borrarError();
+            ValidarCampos();
             //insertar registros si no se ha elegido editar
-            if (editar == false)
+            if (txtNombre.Text == "")
             {
+            }
+            else if(editar==false){
                 try
                 {
                     estilosN.InsertarEstilo(txtNombre.Text);
@@ -57,7 +61,10 @@ namespace Presentacion
                 }
             }
             //si editar = true entonces editamos xd
-            if (editar == true)
+            if (txtNombre.Text=="")
+            {
+            }
+            else if (editar == true)
             {
                 try
                 {
@@ -110,6 +117,35 @@ namespace Presentacion
             }
             else
                 MessageBox.Show("Seleccione el estilo que quiere editar.");
+        }
+
+
+        private bool ValidarCampos()
+        {
+            bool ok = true;
+            if(txtNombre.Text == "")
+            {
+                ok = false;
+               error.SetError(txtNombre, "Introduce el nombre del estilo.");
+            }
+            return ok;
+        }
+
+        private void borrarError()
+        {
+            error.SetError(txtNombre, "");
+        }
+
+        //validacion para que solo ingrese letras
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if((e.KeyChar >= 32 && e.KeyChar <=64 || (e.KeyChar >= 91 && e.KeyChar <= 96)))
+            {
+                MessageBox.Show("Solo se admiten letras", "Advertencia", MessageBoxButtons.OK, 
+                    MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
