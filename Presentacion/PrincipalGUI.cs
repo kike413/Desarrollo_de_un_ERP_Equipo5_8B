@@ -25,7 +25,7 @@ namespace Presentacion
         {
             EstilosGui estilos = new EstilosGui();
             estilos.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void MostraNombre_Click(object sender, EventArgs e)
@@ -42,14 +42,21 @@ namespace Presentacion
         {
             ColoresGUI colores = new ColoresGUI();
             colores.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void Categorias_Click(object sender, EventArgs e)
         {
             Categorias categorias = new Categorias();
             categorias.Show();
-            this.Hide();
+            //this.Hide();
+        }
+
+        private void Marcas_Click(object sender, EventArgs e)
+        {
+            MarcasGUI marcas = new MarcasGUI();
+            marcas.Show();
+           // this.Hide();
         }
     }
 }

@@ -19,17 +19,17 @@ namespace Dominio
             return tabla;
         }
 
-        public void InsertarEstilo(string nombre)
+        public void InsertarMarca(string nombre,string origen)
         {
-            mdao.Insertar(nombre);
+            mdao.Insertar(nombre,origen);
         }
 
-        public void EditarEstilo(string nombre, string id)
+        public void EditarMarca(string nombre, string origen,string id)
         {
-            mdao.Editar(nombre, Convert.ToInt32(id));
+            mdao.Editar(nombre,origen, Convert.ToInt32(id));
         }
 
-        public void EliminarEstilo(string id)
+        public void EliminarMarca(string id)
         {
             mdao.Eliminar(Convert.ToInt32(id));
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalGUI));
             this.Nombre = new System.Windows.Forms.Label();
             this.Estatus = new System.Windows.Forms.Label();
             this.Tipo = new System.Windows.Forms.Label();
@@ -98,6 +99,7 @@
             this.Marcas.TabIndex = 6;
             this.Marcas.Text = "Marcas";
             this.Marcas.UseVisualStyleBackColor = true;
+            this.Marcas.Click += new System.EventHandler(this.Marcas_Click);
             // 
             // Estilos
             // 
@@ -194,6 +196,7 @@
             this.Controls.Add(this.Estatus);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrincipalGUI";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);

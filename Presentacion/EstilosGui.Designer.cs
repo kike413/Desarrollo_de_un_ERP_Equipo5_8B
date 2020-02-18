@@ -159,7 +159,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEliminar.BackColor = System.Drawing.Color.Crimson;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -14,6 +14,7 @@ namespace Presentacion
     public partial class NuevoColor : Form
     {
         Colores ColoresN = new Colores();
+        ColoresGUI gui = new ColoresGUI();
         public NuevoColor()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Presentacion
                 ColoresN.InsertarColor(Colortxt.Text);
                 MessageBox.Show("Se insertó correctamente");
                 this.Close();
+                gui.Show();
             }
         }
 

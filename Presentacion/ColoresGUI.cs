@@ -43,6 +43,7 @@ namespace Presentacion
         {
             NuevoColor ncolor = new NuevoColor();
             ncolor.Show();
+            this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -74,6 +75,11 @@ namespace Presentacion
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ColoresGUI_Load(object sender, EventArgs e)
+        {
+            MostrarColores();
         }
     }
 }

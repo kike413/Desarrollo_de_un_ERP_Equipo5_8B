@@ -44,7 +44,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "insert into Marcas values ('" + nombre + "'+'"+origen+"')";
+                    command.CommandText = "insert into Marcas values ('" + nombre + "','" + origen + "')";
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();

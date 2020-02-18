@@ -88,7 +88,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "EliminarColor";
+                    command.CommandText = "EliminarColores";
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@id", id);
                     command.ExecuteNonQuery();
