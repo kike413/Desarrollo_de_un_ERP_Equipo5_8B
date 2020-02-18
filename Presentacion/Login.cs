@@ -103,11 +103,12 @@ namespace Presentacion
                         EstilosGui estilos = new EstilosGui();
                         estilos.Show();
                         this.Hide();
-                        msgError("Bien alli crack");
+                        msgError("      Bien alli crack");
                     }
                     else
                     {
-                        msgError("Usuario o contraseña incorrectos. \n Intente de nuevo.");
+                        msgError("Usuario o contraseña incorrectos. \n                Intente de nuevo." +
+                            "\n ");
                         txtPass.Clear();
                         txtUsuario.Focus();
                     }
@@ -119,7 +120,7 @@ namespace Presentacion
         //mostrar mensaje de error si el login esta mal
         private void msgError(string msg)
         {
-            lblError.Text = "   " + msg;
+            lblError.Text = "               " + msg;
             lblError.Visible = true; 
         }
     }

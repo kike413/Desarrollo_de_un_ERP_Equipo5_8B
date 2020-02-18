@@ -192,13 +192,12 @@
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
-            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
+            this.lblError.Image = global::Presentacion.Properties.Resources.error_icon;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblError.Location = new System.Drawing.Point(307, 189);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(35, 13);
+            this.lblError.Size = new System.Drawing.Size(0, 13);
             this.lblError.TabIndex = 8;
-            this.lblError.Text = "label2";
             this.lblError.Visible = false;
             // 
             // Login
@@ -218,6 +217,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
