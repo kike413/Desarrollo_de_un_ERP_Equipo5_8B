@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColoresGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColoresGUI.Designer.cs">
+      <DependentUpon>ColoresGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoColor.Designer.cs">
+      <DependentUpon>NuevoColor.cs</DependentUpon>
+    </Compile>
     <Compile Include="EstilosGui.cs">
       <SubType>Form</SubType>
     </Compile>
