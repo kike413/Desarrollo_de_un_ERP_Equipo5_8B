@@ -37,5 +37,19 @@ namespace Presentacion
         {
 
         }
+
+        private void Colores_Click(object sender, EventArgs e)
+        {
+            ColoresGUI colores = new ColoresGUI();
+            colores.Show();
+            this.Hide();
+        }
+
+        private void Categorias_Click(object sender, EventArgs e)
+        {
+            Categorias categorias = new Categorias();
+            categorias.Show();
+            this.Hide();
+        }
     }
 }

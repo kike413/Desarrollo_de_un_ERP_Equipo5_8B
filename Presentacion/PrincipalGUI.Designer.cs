@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Nombre = new System.Windows.Forms.Label();
             this.Estatus = new System.Windows.Forms.Label();
             this.Tipo = new System.Windows.Forms.Label();
@@ -41,16 +40,10 @@
             this.MostrarEstatus = new System.Windows.Forms.Label();
             this.MostrarTipo = new System.Windows.Forms.Label();
             this.MostraNombre = new System.Windows.Forms.Label();
+            this.Colores = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 98);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Nombre
             // 
@@ -124,6 +117,7 @@
             this.Categorias.TabIndex = 8;
             this.Categorias.Text = "Categorias";
             this.Categorias.UseVisualStyleBackColor = true;
+            this.Categorias.Click += new System.EventHandler(this.Categorias_Click);
             // 
             // EditarPerfil
             // 
@@ -162,12 +156,31 @@
             this.MostraNombre.Text = "label1";
             this.MostraNombre.Click += new System.EventHandler(this.MostraNombre_Click);
             // 
-            // Principal
+            // Colores
+            // 
+            this.Colores.Location = new System.Drawing.Point(635, 12);
+            this.Colores.Name = "Colores";
+            this.Colores.Size = new System.Drawing.Size(75, 23);
+            this.Colores.TabIndex = 14;
+            this.Colores.Text = "Colores";
+            this.Colores.UseVisualStyleBackColor = true;
+            this.Colores.Click += new System.EventHandler(this.Colores_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(102, 98);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // PrincipalGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Colores);
             this.Controls.Add(this.MostraNombre);
             this.Controls.Add(this.MostrarTipo);
             this.Controls.Add(this.MostrarEstatus);
@@ -181,7 +194,7 @@
             this.Controls.Add(this.Estatus);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Principal";
+            this.Name = "PrincipalGUI";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -205,5 +218,6 @@
         private System.Windows.Forms.Label MostrarEstatus;
         private System.Windows.Forms.Label MostrarTipo;
         private System.Windows.Forms.Label MostraNombre;
+        private System.Windows.Forms.Button Colores;
     }
 }

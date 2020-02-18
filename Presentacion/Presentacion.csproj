@@ -53,12 +53,6 @@
     <Compile Include="ColoresGUI.Designer.cs">
       <DependentUpon>ColoresGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoColor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NuevoColor.Designer.cs">
-      <DependentUpon>NuevoColor.cs</DependentUpon>
-    </Compile>
     <Compile Include="EstilosGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,11 +65,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categorias.Designer.cs">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoColor.Designer.cs">
+      <DependentUpon>NuevoColor.cs</DependentUpon>
     </Compile>
     <Compile Include="PrincipalGUI.cs">
       <SubType>Form</SubType>
@@ -85,11 +91,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Categorias.resx">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColoresGUI.resx">
+      <DependentUpon>ColoresGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EstilosGui.resx">
       <DependentUpon>EstilosGui.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoColor.resx">
+      <DependentUpon>NuevoColor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalGUI.resx">
       <DependentUpon>PrincipalGUI.cs</DependentUpon>
