@@ -11,7 +11,7 @@ namespace Datos
         private readonly string connectionString;
         public ConexionSQL()
         {
-            connectionString = "Server=DESKTOP-F7OUO59;DataBase=ERP2020; integrated security = true";
+            connectionString = "Server=EDUARDO;DataBase=ERP2020; integrated security = true";
         }
         protected SqlConnection GetConnection()
         {

@@ -9,7 +9,7 @@ using Datos;
 
 namespace Dominio
 {
-    class Principal
+    public class Principal
     {
         private PrincipalDAO principaldao = new PrincipalDAO();
         public void seleccionNombre(string nombre)

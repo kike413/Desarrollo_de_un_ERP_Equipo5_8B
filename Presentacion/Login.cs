@@ -95,8 +95,10 @@ namespace Presentacion
                     if(loginValido == true)
                     {
                         //aqui debe hacer referencia a la principal creando un objeto del tipo del form principal 
-                        Principal ventanaPrincipal = new Principal();
-                        ventanaPrincipal.Show();
+                        PrincipalGUI p = new PrincipalGUI();
+                        p.Show();
+                        //EstilosGui gui = new EstilosGui();
+                        //gui.Show();
                         this.Hide();// para ocultar el login
                      
                         
