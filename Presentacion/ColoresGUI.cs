@@ -52,7 +52,7 @@ namespace Presentacion
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 editar = true;
-                Nombretxt.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
+                //Nombretxt.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
                 idColor = dataGridView1.CurrentRow.Cells["idColor"].Value.ToString();
             }
             else

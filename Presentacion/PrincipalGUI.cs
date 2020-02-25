@@ -47,7 +47,7 @@ namespace Presentacion
 
         private void Categorias_Click(object sender, EventArgs e)
         {
-            Categorias categorias = new Categorias();
+            CategoriasGUI categorias = new CategoriasGUI();
             categorias.Show();
             //this.Hide();
         }

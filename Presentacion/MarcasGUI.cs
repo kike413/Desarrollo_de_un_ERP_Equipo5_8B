@@ -77,7 +77,7 @@ namespace Presentacion
                 editar = true;
                 //entre corchetes el nombre del campo como está en la base de datos
                 txtNombre.Text = dataGridView1.CurrentRow.Cells["nombre"].Value.ToString();
-                txtNombre.Text = dataGridView1.CurrentRow.Cells["origen"].Value.ToString();
+                txtOrigen.Text = dataGridView1.CurrentRow.Cells["origen"].Value.ToString();
                 idMarca = dataGridView1.CurrentRow.Cells["idMarca"].Value.ToString();
             }
             else
@@ -106,6 +106,7 @@ namespace Presentacion
         private void limpiar()
         {
             txtNombre.Clear();
+            txtOrigen.Clear();
         }
 
         private bool ValidarCampos()
@@ -129,16 +130,6 @@ namespace Presentacion
         }
 
         //validacion para que solo ingrese letras
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64 || (e.KeyChar >= 91 && e.KeyChar <= 96)))
-            {
-                MessageBox.Show("Solo se admiten letras", "Advertencia", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
 
         private void txtOrigen_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -154,6 +145,17 @@ namespace Presentacion
         private void MarcasGUI_Load(object sender, EventArgs e)
         {
             MostrarMarcas();
+        }
+
+        private void txtNombre_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64 || (e.KeyChar >= 91 && e.KeyChar <= 96)))
+            {
+                MessageBox.Show("Solo se admiten letras", "Advertencia", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

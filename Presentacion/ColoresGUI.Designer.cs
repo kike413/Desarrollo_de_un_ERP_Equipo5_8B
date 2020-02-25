@@ -34,9 +34,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
-            this.panel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,13 +91,6 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // panel
-            // 
-            this.panel.Location = new System.Drawing.Point(508, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(216, 352);
-            this.panel.TabIndex = 8;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(19, 268);
@@ -117,12 +110,19 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             // 
+            // panel
+            // 
+            this.panel.Location = new System.Drawing.Point(508, 0);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(216, 352);
+            this.panel.TabIndex = 8;
+            // 
             // ColoresGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(721, 353);
+            this.ClientSize = new System.Drawing.Size(503, 353);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.button5);
@@ -148,8 +148,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel;
     }
 }

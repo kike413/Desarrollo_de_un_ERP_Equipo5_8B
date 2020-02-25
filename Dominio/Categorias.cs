@@ -4,20 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
+using System.Data;
 
 namespace Dominio
 {
-    class Categorias
+    public class Categorias
     {
         private CategoriasDAO categoriasdao = new CategoriasDAO();
-        public void seleccionNombre(string nombre)
+
+        public DataTable MostrarCategorias()
         {
-            //categoriasdao.SeleccionarNombre(nombre);
+            DataTable tabla = new DataTable();
+            tabla = categoriasdao.Mostrar();
+            return tabla;
         }
 
-        public void seleccionID(int id)
+        public void InsertarCategorias(string nombre)
         {
-            //categoriasdao.SeleccionarID(id);
+            categoriasdao.Insertar(nombre);
+        }
+
+        public void EditarCategoria(string nombre, string id)
+        {
+            categoriasdao.Editar(nombre, Convert.ToInt32(id));
+        }
+
+        public void EliminarCategoria(string id)
+        {
+           categoriasdao.Eliminar(Convert.ToInt32(id));
         }
     }
 }
