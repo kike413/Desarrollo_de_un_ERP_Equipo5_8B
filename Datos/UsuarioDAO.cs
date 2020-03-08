@@ -19,14 +19,26 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select * from usuarios where nombre=@usuario and" +
-                        " contraseña=@password";
+                    command.CommandText = "SELECT Usuarios.idUsuario, Usuarios.nombre, Empleados.nombre, Empleados.apaterno, Empleados.amaterno, Empleados.estadoCivil " +
+                        "FROM Usuarios INNER JOIN Empleados ON Usuarios.idUsuario = Empleados.idEmpleado where Empleados.nombre=@usuario and " +
+                        "Usuarios.contraseña=@password ";
+                    //command.CommandText = "select * from usuarios where nombre=@usuario and" +
+                    //    " contraseña=@password";
                     command.Parameters.AddWithValue("@usuario",usuario);
                     command.Parameters.AddWithValue("@password", password);
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
+                        while (reader.Read())
+                        {
+                            InicioSesionDAO.ID = reader.GetInt32(0);
+                            InicioSesionDAO.Cargo = reader.GetString(1);
+                            InicioSesionDAO.Nombre = reader.GetString(2);
+                            InicioSesionDAO.ApellidoPaterno = reader.GetString(3);
+                            InicioSesionDAO.ApellidoMaterno = reader.GetString(4);
+                            InicioSesionDAO.EstadoCivil = reader.GetString(5);
+                        }
                         return true;
                     }
                     else
