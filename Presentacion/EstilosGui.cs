@@ -37,7 +37,6 @@ namespace Presentacion
         {
             Estilos estilosN = new Estilos();
             dataGridView1.DataSource = estilosN.MostrarEstilos();
-            dataGridView1.ClearSelection();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -147,6 +146,13 @@ namespace Presentacion
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            PrincipalGUI principal = new PrincipalGUI();
+            principal.Show();
+            this.Hide();
         }
     }
 }

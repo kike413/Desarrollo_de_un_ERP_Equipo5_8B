@@ -25,7 +25,6 @@ namespace Presentacion
         private void MostrarMarcas() {
             Marcas marcasN = new Marcas();
             dataGridView1.DataSource = marcasN.MostrarMarcas();
-            dataGridView1.ClearSelection();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -157,6 +156,13 @@ namespace Presentacion
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            PrincipalGUI principal = new PrincipalGUI();
+            principal.Show();
+            this.Hide();
         }
     }
 }

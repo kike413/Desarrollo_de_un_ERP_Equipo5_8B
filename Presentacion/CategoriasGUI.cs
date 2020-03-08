@@ -28,13 +28,12 @@ namespace Presentacion
 
         private void Categorias_Load(object sender, EventArgs e)
         {
-            MostrarCategorias();
+            
         }
         private void MostrarCategorias()
         {
             Categorias catN = new Categorias();
             dataGridView1.DataSource = catN.MostrarCategorias();
-            dataGridView1.ClearSelection();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -142,6 +141,13 @@ namespace Presentacion
         private void limpiar()
         {
             txtNombre.Clear();
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            PrincipalGUI principal = new PrincipalGUI();
+            principal.Show();
+            this.Hide();
         }
     }
 }
