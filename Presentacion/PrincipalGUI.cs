@@ -7,56 +7,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dominio;
-
+using Datos;
 
 
 namespace Presentacion
 {
     public partial class PrincipalGUI : Form
     {
-        Principal principalD = new Principal();
+
         public PrincipalGUI()
         {
             InitializeComponent();
         }
 
-        private void Estilos_Click(object sender, EventArgs e)
+
+        
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            CargarDatosUsuario();
+        }
+
+
+        private void Estilos_Click_1(object sender, EventArgs e)
         {
             EstilosGui estilos = new EstilosGui();
             estilos.Show();
-            //this.Hide();
+            this.Hide();
         }
 
-        private void MostraNombre_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Colores_Click(object sender, EventArgs e)
+        private void Colores_Click_1(object sender, EventArgs e)
         {
             ColoresGUI colores = new ColoresGUI();
             colores.Show();
-            //this.Hide();
+            this.Hide();
         }
 
-        private void Categorias_Click(object sender, EventArgs e)
+        private void Categorias_Click_1(object sender, EventArgs e)
         {
             CategoriasGUI categorias = new CategoriasGUI();
             categorias.Show();
-            //this.Hide();
+            this.Hide();
         }
 
-        private void Marcas_Click(object sender, EventArgs e)
+        private void Marcas_Click_1(object sender, EventArgs e)
         {
             MarcasGUI marcas = new MarcasGUI();
             marcas.Show();
-           // this.Hide();
+            this.Hide();
+        }
+
+        private void brnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+        
+        private void CargarDatosUsuario()
+        {
+            Cargo.Text = InicioSesionDAO.Cargo;
+            Nombre.Text = InicioSesionDAO.Nombre + " " + InicioSesionDAO.ApellidoPaterno + " " + InicioSesionDAO.ApellidoMaterno;
+            EstadoCivil.Text = InicioSesionDAO.EstadoCivil;
         }
     }
 }
