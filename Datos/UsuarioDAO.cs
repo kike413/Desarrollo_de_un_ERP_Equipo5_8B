@@ -20,7 +20,7 @@ namespace Datos
                 {
                     command.Connection = connection;
                     command.CommandText = "SELECT Usuarios.idUsuario, Usuarios.nombre, Empleados.nombre, Empleados.apaterno, Empleados.amaterno, Empleados.estadoCivil " +
-                        "FROM Usuarios INNER JOIN Empleados ON Usuarios.idUsuario = Empleados.idEmpleado where Empleados.nombre=@usuario and " +
+                        "FROM Usuarios INNER JOIN Empleados ON Usuarios.idUsuario = Empleados.idEmpleado where Usuarios.nombre=@usuario and " +
                         "Usuarios.contraseña=@password ";
                     //command.CommandText = "select * from usuarios where nombre=@usuario and" +
                     //    " contraseña=@password";
