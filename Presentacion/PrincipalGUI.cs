@@ -65,9 +65,17 @@ namespace Presentacion
         
         private void CargarDatosUsuario()
         {
+            //ID.Text = InicioSesionDAO.CID;
             Cargo.Text = InicioSesionDAO.Cargo;
             Nombre.Text = InicioSesionDAO.Nombre + " " + InicioSesionDAO.ApellidoPaterno + " " + InicioSesionDAO.ApellidoMaterno;
             EstadoCivil.Text = InicioSesionDAO.EstadoCivil;
+        }
+
+        private void Productos_Click(object sender, EventArgs e)
+        {
+            DetalleProductoGUI DPGUI = new DetalleProductoGUI();
+            DPGUI.Show();
+            this.Hide();
         }
     }
 }
