@@ -17,6 +17,7 @@ namespace Presentacion
         Colores ColoresN = new Colores();
         private string idColor = null;
         private bool editar = false;
+
         public ColoresGUI()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Presentacion
         {
             Colores ColoresN = new Colores();
             dataGridView1.DataSource = ColoresN.MostrarColores();
+            dataGridView1.ClearSelection();
         }
 
 
@@ -80,6 +82,18 @@ namespace Presentacion
         private void ColoresGUI_Load(object sender, EventArgs e)
         {
             MostrarColores();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            PrincipalGUI principal = new PrincipalGUI();
+            principal.Show();
+            this.Hide();
         }
     }
 }
