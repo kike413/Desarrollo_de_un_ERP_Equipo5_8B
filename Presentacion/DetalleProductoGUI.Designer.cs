@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtExistencia = new System.Windows.Forms.TextBox();
+            this.txtTalla = new System.Windows.Forms.TextBox();
             this.Existencia = new System.Windows.Forms.Label();
             this.Regresar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtTalla = new System.Windows.Forms.TextBox();
-            this.txtExistencia = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -65,6 +65,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 450);
             this.panel1.TabIndex = 7;
+            // 
+            // txtExistencia
+            // 
+            this.txtExistencia.Location = new System.Drawing.Point(75, 102);
+            this.txtExistencia.Name = "txtExistencia";
+            this.txtExistencia.Size = new System.Drawing.Size(138, 20);
+            this.txtExistencia.TabIndex = 24;
+            this.txtExistencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExistencia_KeyPress_1);
+            // 
+            // txtTalla
+            // 
+            this.txtTalla.Location = new System.Drawing.Point(75, 61);
+            this.txtTalla.Name = "txtTalla";
+            this.txtTalla.Size = new System.Drawing.Size(138, 20);
+            this.txtTalla.TabIndex = 23;
+            this.txtTalla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTalla_KeyPress_1);
             // 
             // Existencia
             // 
@@ -220,22 +236,6 @@
             // 
             this.error.ContainerControl = this;
             // 
-            // txtTalla
-            // 
-            this.txtTalla.Location = new System.Drawing.Point(75, 61);
-            this.txtTalla.Name = "txtTalla";
-            this.txtTalla.Size = new System.Drawing.Size(138, 20);
-            this.txtTalla.TabIndex = 23;
-            this.txtTalla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTalla_KeyPress_1);
-            // 
-            // txtExistencia
-            // 
-            this.txtExistencia.Location = new System.Drawing.Point(75, 102);
-            this.txtExistencia.Name = "txtExistencia";
-            this.txtExistencia.Size = new System.Drawing.Size(138, 20);
-            this.txtExistencia.TabIndex = 24;
-            this.txtExistencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExistencia_KeyPress_1);
-            // 
             // DetalleProductoGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +249,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "DetalleProductoGUI";
             this.Text = "DetalleProductoGUI";
+            this.Load += new System.EventHandler(this.DetalleProductos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -25,6 +25,11 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        private void DetalleProductos_Load(object sender, EventArgs e)
+        {
+            MostrarDetallesProductos();
+        }
+
         private void MostrarDetallesProductos()
         {
             DetalleProductos DP = new DetalleProductos();
