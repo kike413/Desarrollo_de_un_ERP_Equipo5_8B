@@ -13,10 +13,10 @@ namespace Dominio
     {
         private EstilosDAO estilosDao = new EstilosDAO();
 
-        public DataTable MostrarEstilos()
+        public DataTable MostrarEstilos(int pagina)
         {
             DataTable tabla = new DataTable();
-            tabla = estilosDao.Mostrar();
+            tabla = estilosDao.Mostrar(pagina);
             return tabla;
         }
 
@@ -25,7 +25,7 @@ namespace Dominio
             estilosDao.Insertar(nombre);
         }
 
-        public void EditarEstilo(string nombre,string id)
+        public void EditarEstilo(string nombre, string id)
         {
             estilosDao.Editar(nombre, Convert.ToInt32(id));
         }
@@ -35,5 +35,11 @@ namespace Dominio
             estilosDao.Eliminar(Convert.ToInt32(id));
         }
 
+        public int obtenerPaginas()
+        {
+            int pags = estilosDao.obtenerPaginas();
+            return pags;
+        }
     }
+
 }

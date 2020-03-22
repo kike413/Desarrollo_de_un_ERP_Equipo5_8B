@@ -44,6 +44,7 @@
     <Compile Include="CategoriasDAO.cs" />
     <Compile Include="ColoresDAO.cs" />
     <Compile Include="ConexionSQL.cs" />
+    <Compile Include="DetalleProductosDAO.cs" />
     <Compile Include="EstilosDAO.cs" />
     <Compile Include="InicioSesionDAO.cs" />
     <Compile Include="MarcasDAO.cs" />

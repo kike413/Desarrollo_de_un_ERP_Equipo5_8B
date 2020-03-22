@@ -44,6 +44,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.retroceder = new System.Windows.Forms.Button();
+            this.avanza = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -71,6 +73,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(36, 46);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,7 +90,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(208, 211);
+            this.dataGridView1.Size = new System.Drawing.Size(241, 254);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -113,12 +116,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
-            this.panel1.Controls.Add(this.Regresar);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.Nombre);
             this.panel1.Controls.Add(this.txtNombre);
-            this.panel1.Location = new System.Drawing.Point(280, 0);
+            this.panel1.Location = new System.Drawing.Point(405, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 319);
             this.panel1.TabIndex = 6;
@@ -132,7 +134,7 @@
             this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Regresar.Font = new System.Drawing.Font("Javanese Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regresar.ForeColor = System.Drawing.Color.LightGray;
-            this.Regresar.Location = new System.Drawing.Point(75, 276);
+            this.Regresar.Location = new System.Drawing.Point(471, 389);
             this.Regresar.Name = "Regresar";
             this.Regresar.Size = new System.Drawing.Size(108, 31);
             this.Regresar.TabIndex = 21;
@@ -186,7 +188,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(156, 282);
+            this.btnEliminar.Location = new System.Drawing.Point(187, 397);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 5;
@@ -202,7 +204,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(48, 282);
+            this.btnEditar.Location = new System.Drawing.Point(23, 397);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 4;
@@ -214,12 +216,47 @@
             // 
             this.error.ContainerControl = this;
             // 
+            // retroceder
+            // 
+            this.retroceder.BackColor = System.Drawing.Color.RoyalBlue;
+            this.retroceder.FlatAppearance.BorderSize = 0;
+            this.retroceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.retroceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.retroceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retroceder.ForeColor = System.Drawing.Color.White;
+            this.retroceder.Location = new System.Drawing.Point(60, 339);
+            this.retroceder.Name = "retroceder";
+            this.retroceder.Size = new System.Drawing.Size(38, 23);
+            this.retroceder.TabIndex = 9;
+            this.retroceder.Text = "<";
+            this.retroceder.UseVisualStyleBackColor = false;
+            this.retroceder.Click += new System.EventHandler(this.retrocede_Click);
+            // 
+            // avanza
+            // 
+            this.avanza.BackColor = System.Drawing.Color.RoyalBlue;
+            this.avanza.FlatAppearance.BorderSize = 0;
+            this.avanza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.avanza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.avanza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avanza.ForeColor = System.Drawing.Color.White;
+            this.avanza.Location = new System.Drawing.Point(187, 339);
+            this.avanza.Name = "avanza";
+            this.avanza.Size = new System.Drawing.Size(38, 23);
+            this.avanza.TabIndex = 10;
+            this.avanza.Text = ">";
+            this.avanza.UseVisualStyleBackColor = false;
+            this.avanza.Click += new System.EventHandler(this.avanza_Click);
+            // 
             // EstilosGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(523, 319);
+            this.ClientSize = new System.Drawing.Size(679, 456);
+            this.Controls.Add(this.Regresar);
+            this.Controls.Add(this.avanza);
+            this.Controls.Add(this.retroceder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEliminar);
@@ -253,5 +290,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider error;
         private System.Windows.Forms.Button Regresar;
+        private System.Windows.Forms.Button avanza;
+        private System.Windows.Forms.Button retroceder;
     }
 }

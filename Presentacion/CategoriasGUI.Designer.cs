@@ -44,6 +44,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Regresar = new System.Windows.Forms.Button();
+            this.avanza = new System.Windows.Forms.Button();
+            this.retroceder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -124,7 +126,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(218, 312);
+            this.btnEliminar.Location = new System.Drawing.Point(241, 379);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 17;
@@ -140,7 +142,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(100, 312);
+            this.btnEditar.Location = new System.Drawing.Point(85, 379);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 16;
@@ -197,7 +199,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(300, 211);
+            this.dataGridView1.Size = new System.Drawing.Size(274, 236);
             this.dataGridView1.TabIndex = 19;
             // 
             // errorProvider1
@@ -221,12 +223,46 @@
             this.Regresar.UseVisualStyleBackColor = false;
             this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
+            // avanza
+            // 
+            this.avanza.BackColor = System.Drawing.Color.RoyalBlue;
+            this.avanza.FlatAppearance.BorderSize = 0;
+            this.avanza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.avanza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.avanza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avanza.ForeColor = System.Drawing.Color.White;
+            this.avanza.Location = new System.Drawing.Point(278, 331);
+            this.avanza.Name = "avanza";
+            this.avanza.Size = new System.Drawing.Size(38, 23);
+            this.avanza.TabIndex = 22;
+            this.avanza.Text = ">";
+            this.avanza.UseVisualStyleBackColor = false;
+            this.avanza.Click += new System.EventHandler(this.avanza_Click);
+            // 
+            // retroceder
+            // 
+            this.retroceder.BackColor = System.Drawing.Color.RoyalBlue;
+            this.retroceder.FlatAppearance.BorderSize = 0;
+            this.retroceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.retroceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.retroceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retroceder.ForeColor = System.Drawing.Color.White;
+            this.retroceder.Location = new System.Drawing.Point(69, 331);
+            this.retroceder.Name = "retroceder";
+            this.retroceder.Size = new System.Drawing.Size(38, 23);
+            this.retroceder.TabIndex = 21;
+            this.retroceder.Text = "<";
+            this.retroceder.UseVisualStyleBackColor = false;
+            this.retroceder.Click += new System.EventHandler(this.retroceder_Click);
+            // 
             // CategoriasGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(694, 385);
+            this.ClientSize = new System.Drawing.Size(694, 414);
+            this.Controls.Add(this.avanza);
+            this.Controls.Add(this.retroceder);
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminar);
@@ -260,5 +296,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button Regresar;
+        private System.Windows.Forms.Button avanza;
+        private System.Windows.Forms.Button retroceder;
     }
 }

@@ -53,6 +53,12 @@
     <Compile Include="ColoresGUI.Designer.cs">
       <DependentUpon>ColoresGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetalleProductoGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleProductoGUI.Designer.cs">
+      <DependentUpon>DetalleProductoGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="EstilosGui.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ColoresGUI.resx">
       <DependentUpon>ColoresGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleProductoGUI.resx">
+      <DependentUpon>DetalleProductoGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EstilosGui.resx">
       <DependentUpon>EstilosGui.cs</DependentUpon>

@@ -18,6 +18,9 @@ namespace Presentacion
         private string idEstilo = null;
         //variable para saber cuando se va a editar.
         private bool editar = false;
+        private int pag = 1;
+        private int numPags = 0;
+        private int auxiliar = 0;
         public EstilosGui()
         {
             InitializeComponent();
@@ -31,13 +34,16 @@ namespace Presentacion
         private void EstilosGui_Load(object sender, EventArgs e)
         {
             MostrarEstilos();
+            numPags = estilosN.obtenerPaginas();
+            Console.WriteLine("numero de paginas " + numPags);
         }
 
         private void MostrarEstilos()
         {
             Estilos estilosN = new Estilos();
-            dataGridView1.DataSource = estilosN.MostrarEstilos();
-            dataGridView1.ClearSelection();
+            numPags = estilosN.obtenerPaginas();
+            Console.WriteLine("numero de paginas " + numPags);
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -154,6 +160,37 @@ namespace Presentacion
             PrincipalGUI principal = new PrincipalGUI();
             principal.Show();
             this.Hide();
+        }
+
+        private void retrocede_Click(object sender, EventArgs e)
+        {
+            if(pag == 1)
+            {
+                retroceder.Enabled = false;
+                MostrarEstilos();
+            }
+            else
+            {
+                pag--;
+                avanza.Enabled = true;
+                MostrarEstilos();
+            }
+            Console.WriteLine(pag);
+        }
+
+        private void avanza_Click(object sender, EventArgs e)
+        {
+            if(pag == numPags)
+            {
+                avanza.Enabled = false;
+                MostrarEstilos();
+            }
+            else
+            {
+                pag++;
+                retroceder.Enabled = true;
+                MostrarEstilos();
+            }
         }
     }
 }

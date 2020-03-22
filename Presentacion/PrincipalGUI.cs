@@ -49,12 +49,6 @@ namespace Presentacion
             this.Hide();
         }
 
-        private void Marcas_Click_1(object sender, EventArgs e)
-        {
-            MarcasGUI marcas = new MarcasGUI();
-            marcas.Show();
-            this.Hide();
-        }
 
         private void brnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -75,6 +69,13 @@ namespace Presentacion
         {
             DetalleProductoGUI DPGUI = new DetalleProductoGUI();
             DPGUI.Show();
+            this.Hide();
+        }
+
+        private void Marcas_Click(object sender, EventArgs e)
+        {
+            MarcasGUI marcas = new MarcasGUI();
+            marcas.Show();
             this.Hide();
         }
     }

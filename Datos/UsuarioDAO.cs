@@ -7,14 +7,15 @@ using System.Data.SqlClient;
 using System.Data;
 namespace Datos
 {
-    public class UsuarioDAO:ConexionSQL //herencia de conexionsql
+    public class UsuarioDAO : ConexionSQL //herencia de conexionsql
     {
         /**
          * Método para verificar el login
          */
-        public bool Login(string usuario,string password)
+        public bool Login(string usuario, string password)
         {
-            using (var connection = GetConnection()){
+            using (var connection = GetConnection())
+            {
                 connection.Open();
                 using (var command = new SqlCommand())
                 {
@@ -24,7 +25,7 @@ namespace Datos
                         "Usuarios.contraseña=@password ";
                     //command.CommandText = "select * from usuarios where nombre=@usuario and" +
                     //    " contraseña=@password";
-                    command.Parameters.AddWithValue("@usuario",usuario);
+                    command.Parameters.AddWithValue("@usuario", usuario);
                     command.Parameters.AddWithValue("@password", password);
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();

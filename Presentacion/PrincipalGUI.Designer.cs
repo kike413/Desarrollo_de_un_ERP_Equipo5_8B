@@ -97,6 +97,7 @@
             this.Marcas.TabIndex = 23;
             this.Marcas.Text = "Marcas";
             this.Marcas.UseVisualStyleBackColor = false;
+            this.Marcas.Click += new System.EventHandler(this.Marcas_Click);
             // 
             // pictureBox6
             // 

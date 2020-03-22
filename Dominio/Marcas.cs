@@ -12,10 +12,10 @@ namespace Dominio
     public class Marcas
     {
         private MarcasDAO mdao = new MarcasDAO();
-        public DataTable MostrarMarcas()
+        public DataTable MostrarMarcas(int pagina)
         {
             DataTable tabla = new DataTable();
-            tabla = mdao.Mostrar();
+            tabla = mdao.Mostrar(pagina);
             return tabla;
         }
 
@@ -32,6 +32,11 @@ namespace Dominio
         public void EliminarMarca(string id)
         {
             mdao.Eliminar(Convert.ToInt32(id));
+        }
+        public int obtenerPaginas()
+        {
+            int pags = mdao.obtenerPaginas();
+            return pags;
         }
     }
 }

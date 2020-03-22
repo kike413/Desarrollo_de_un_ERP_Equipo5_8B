@@ -9,10 +9,18 @@ namespace Datos
         public class ConexionSQL
     {
         private readonly string connectionString;
+        public static string us { get; set; }
+        public static string pass { get; set; }
         public ConexionSQL()
         {
-            connectionString = "Server=EDUARDO;DataBase=ERP2020; integrated security = true";
-        }
+            try
+            {
+                connectionString = "Server=EDUARDO;DataBase=ERP2020; integrated security = true";
+            }catch(Exception e)
+            {
+                
+            }
+            }
         protected SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);

@@ -12,10 +12,10 @@ namespace Dominio
     {
         private CategoriasDAO categoriasdao = new CategoriasDAO();
 
-        public DataTable MostrarCategorias()
+        public DataTable MostrarCategorias(int pagina)
         {
             DataTable tabla = new DataTable();
-            tabla = categoriasdao.Mostrar();
+            tabla = categoriasdao.Mostrar(pagina);
             return tabla;
         }
 
@@ -32,6 +32,12 @@ namespace Dominio
         public void EliminarCategoria(string id)
         {
            categoriasdao.Eliminar(Convert.ToInt32(id));
+        }
+
+        public int obtenerPaginas()
+        {
+            int pags = categoriasdao.obtenerPaginas();
+            return pags;
         }
     }
 }

@@ -17,6 +17,9 @@ namespace Presentacion
         private string idMarca = null;
         //variable para saber cuando se va a editar.
         private bool editar = false;
+        private int pag = 1;
+        private int numPags = 0;
+        private int auxiliar = 0;
         public MarcasGUI()
         {
             InitializeComponent();
@@ -24,8 +27,10 @@ namespace Presentacion
 
         private void MostrarMarcas() {
             Marcas marcasN = new Marcas();
-            dataGridView1.DataSource = marcasN.MostrarMarcas();
-            dataGridView1.ClearSelection();
+            numPags = marcasN.obtenerPaginas();
+            Console.WriteLine("numero de paginas " + numPags);
+            
+
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -146,6 +151,8 @@ namespace Presentacion
         private void MarcasGUI_Load(object sender, EventArgs e)
         {
             MostrarMarcas();
+            numPags = marcasN.obtenerPaginas();
+            Console.WriteLine("numero de paginas " + numPags);
         }
 
         private void txtNombre_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -164,6 +171,36 @@ namespace Presentacion
             PrincipalGUI principal = new PrincipalGUI();
             principal.Show();
             this.Hide();
+        }
+
+        private void retroceder_Click(object sender, EventArgs e)
+        {
+            if (pag == 1)
+            {
+                retroceder.Enabled = false;
+                MostrarMarcas();
+            }
+            else
+            {
+                pag--;
+                avanza.Enabled = true;
+                MostrarMarcas();
+            }
+        }
+
+        private void avanza_Click(object sender, EventArgs e)
+        {
+            if (pag == numPags)
+            {
+                avanza.Enabled = false;
+                MostrarMarcas();
+            }
+            else
+            {
+                pag++;
+                retroceder.Enabled = true;
+                MostrarMarcas();
+            }
         }
     }
 }

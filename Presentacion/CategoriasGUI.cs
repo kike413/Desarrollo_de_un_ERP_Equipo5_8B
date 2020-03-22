@@ -16,6 +16,9 @@ namespace Presentacion
         private string idCategoria = null;
         //variable para saber cuando se va a editar.
         private bool editar = false;
+        private int pag = 1;
+        private int numPags = 0;
+        private int auxiliar = 0;
         public CategoriasGUI()
         {
             InitializeComponent();
@@ -28,13 +31,40 @@ namespace Presentacion
 
         private void Categorias_Load(object sender, EventArgs e)
         {
-            MostrarCategorias();   
+            MostrarCategorias();
+            numPags = catN.obtenerPaginas();
+            Console.WriteLine("numero de paginas " + numPags);
         }
         private void MostrarCategorias()
         {
             Categorias catN = new Categorias();
-            dataGridView1.DataSource = catN.MostrarCategorias();
-            dataGridView1.ClearSelection();
+            numPags = catN.obtenerPaginas();
+            Console.WriteLine("numero de paginas " + numPags);
+            if (numPags < auxiliar && pag>=numPags)
+            {
+                pag--;
+                dataGridView1.DataSource = catN.MostrarCategorias(pag);
+                dataGridView1.ClearSelection();
+            }
+            else
+            {
+                dataGridView1.DataSource = catN.MostrarCategorias(pag);
+                dataGridView1.ClearSelection();
+
+                if (pag == 1)
+                {
+                    retroceder.Enabled = false;
+                }
+                if (pag == numPags)
+                {
+                    avanza.Enabled = false;
+                }
+                else
+                {
+                    avanza.Enabled = true;
+                }
+            }
+            auxiliar = numPags;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -149,6 +179,37 @@ namespace Presentacion
             PrincipalGUI principal = new PrincipalGUI();
             principal.Show();
             this.Hide();
+        }
+
+        private void retroceder_Click(object sender, EventArgs e)
+        {
+            if (pag == 1)
+            {
+                retroceder.Enabled = false;
+                MostrarCategorias();
+            }
+            else
+            {
+                pag--;
+                avanza.Enabled = true;
+                MostrarCategorias();
+            }
+            Console.WriteLine(pag);
+        }
+
+        private void avanza_Click(object sender, EventArgs e)
+        {
+            if (pag == numPags)
+            {
+                avanza.Enabled = false;
+                MostrarCategorias();
+            }
+            else
+            {
+                pag++;
+                retroceder.Enabled = true;
+                MostrarCategorias();
+            }
         }
     }
 }
