@@ -13,10 +13,10 @@ namespace Dominio
     {
         private ColoresDAO coloresDao = new ColoresDAO();
 
-        public DataTable MostrarColores()
+        public DataTable MostrarColores(int pagina)
         {
             DataTable tabla = new DataTable();
-            tabla = coloresDao.Mostrar();
+            tabla = coloresDao.Mostrar(pagina);
             return tabla;
         }
 
@@ -35,5 +35,10 @@ namespace Dominio
             coloresDao.Eliminar(Convert.ToInt32(id));
         }
 
+        public int obtenerPaginas()
+        {
+            int pags = coloresDao.obtenerPaginas();
+            return pags;
+        }
     }
 }

@@ -13,8 +13,8 @@ namespace Datos
 
         SqlDataReader leer;
         DataTable tabla = new DataTable();
-
-        public DataTable Mostrar()
+        int pagina = 0;
+        public DataTable Mostrar(int pagina)
         {
             //sql
             using (var connection = GetConnection())
@@ -23,7 +23,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select * from colores";
+                    command.CommandText = "select * from paginacion_colores(" + pagina + ")";
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     tabla.Load(reader);
@@ -45,7 +45,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "insert into Colores values ('"+nombre+"')";
+                    command.CommandText = "insert into Colores values ('" + nombre + "',default)";
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
@@ -96,6 +96,26 @@ namespace Datos
                     connection.Close();
                 }
             }
+        }
+
+        public int obtenerPaginas()
+        {
+            //sql
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select ceiling(count(*)/10.0) from Colores where estatus ='A'";
+                    command.CommandType = CommandType.Text;
+                    pagina = Convert.ToInt32(command.ExecuteScalar());
+                    Console.WriteLine("paginas " + pagina);
+                    connection.Close();
+                    return pagina;
+                }
+            }
+
         }
     }
 }

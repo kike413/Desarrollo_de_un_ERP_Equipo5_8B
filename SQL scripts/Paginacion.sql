@@ -25,3 +25,12 @@ as return
 select * from Categorias where estatus='A' order by idCategoria offset (@pagina+-1)*10 
 rows fetch next 10 rows only
 go
+/**
+Paginación colores
+**/
+create function paginacion_colores (@pagina int)
+returns table
+as return
+select * from Colores where estatus='A' order by idColor offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
