@@ -29,7 +29,31 @@ namespace Presentacion
             Marcas marcasN = new Marcas();
             numPags = marcasN.obtenerPaginas();
             Console.WriteLine("numero de paginas " + numPags);
-            
+            if (numPags < auxiliar && pag >= numPags)
+            {
+                pag--;
+                dataGridView1.DataSource = marcasN.MostrarMarcas(pag);
+                dataGridView1.ClearSelection();
+            }
+            else
+            {
+                dataGridView1.DataSource = marcasN.MostrarMarcas(pag);
+                dataGridView1.ClearSelection();
+
+                if (pag == 1)
+                {
+                    retroceder.Enabled = false;
+                }
+                if (pag == numPags)
+                {
+                    avanza.Enabled = false;
+                }
+                else
+                {
+                    avanza.Enabled = true;
+                }
+            }
+            auxiliar = numPags;
 
         }
         private void btnGuardar_Click(object sender, EventArgs e)
