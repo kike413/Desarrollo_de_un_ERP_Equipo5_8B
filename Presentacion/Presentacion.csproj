@@ -65,11 +65,11 @@
     <Compile Include="EstilosGui.Designer.cs">
       <DependentUpon>EstilosGui.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="ProveedoresGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ProveedoresGUI.Designer.cs">
+      <DependentUpon>ProveedoresGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="CategoriasGUI.cs">
       <SubType>Form</SubType>
@@ -137,6 +137,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ProveedoresGUI.resx">
+      <DependentUpon>ProveedoresGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
