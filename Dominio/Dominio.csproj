@@ -45,6 +45,7 @@
     <Compile Include="Colores.cs" />
     <Compile Include="DetalleProductos.cs" />
     <Compile Include="Estilos.cs" />
+    <Compile Include="Proveedores.cs" />
     <Compile Include="Marcas.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
