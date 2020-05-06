@@ -25,6 +25,8 @@ namespace Presentacion
         private void Principal_Load(object sender, EventArgs e)
         {
             CargarDatosUsuario();
+            hora.Text = DateTime.Now.ToString("hh:mm:ss");
+            fecha.Text = DateTime.Now.ToShortDateString();
         }
 
 
@@ -67,8 +69,8 @@ namespace Presentacion
 
         private void Productos_Click(object sender, EventArgs e)
         {
-            DetalleProductoGUI DPGUI = new DetalleProductoGUI();
-            DPGUI.Show();
+            ProductosGUI prGui = new ProductosGUI();
+            prGui.Show();
             this.Hide();
         }
 
@@ -76,6 +78,13 @@ namespace Presentacion
         {
             MarcasGUI marcas = new MarcasGUI();
             marcas.Show();
+            this.Hide();
+        }
+
+        private void Pedidos_Click(object sender, EventArgs e)
+        {
+            ProveedoresGUI proV = new ProveedoresGUI();
+            proV.Show();
             this.Hide();
         }
     }
