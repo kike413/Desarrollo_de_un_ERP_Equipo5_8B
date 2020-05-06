@@ -39,17 +39,30 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fecha = new System.Windows.Forms.Label();
+            this.hora = new System.Windows.Forms.Label();
             this.EstadoCivil = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.Label();
             this.Cargo = new System.Windows.Forms.Label();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.Colores = new System.Windows.Forms.Button();
             this.Productos = new System.Windows.Forms.Button();
             this.Estilos = new System.Windows.Forms.Button();
             this.Categorias = new System.Windows.Forms.Button();
             this.Pedidos = new System.Windows.Forms.Button();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.brnCerrarSesion = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -77,10 +90,11 @@
             this.panel1.Controls.Add(this.Estilos);
             this.panel1.Controls.Add(this.Categorias);
             this.panel1.Controls.Add(this.Pedidos);
+            this.panel1.Controls.Add(this.shapeContainer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(880, 450);
             this.panel1.TabIndex = 15;
             // 
             // Marcas
@@ -155,42 +169,123 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Gray;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(203)))));
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.fecha);
+            this.panel3.Controls.Add(this.hora);
             this.panel3.Controls.Add(this.EstadoCivil);
             this.panel3.Controls.Add(this.Nombre);
             this.panel3.Controls.Add(this.Cargo);
+            this.panel3.Controls.Add(this.shapeContainer2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(600, 0);
+            this.panel3.Location = new System.Drawing.Point(609, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 450);
+            this.panel3.Size = new System.Drawing.Size(271, 450);
             this.panel3.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 18);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Fecha:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 18);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Hora:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(73, 106);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 18);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Datos del usuario:";
+            // 
+            // fecha
+            // 
+            this.fecha.AutoSize = true;
+            this.fecha.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha.Location = new System.Drawing.Point(57, 49);
+            this.fecha.Name = "fecha";
+            this.fecha.Size = new System.Drawing.Size(39, 17);
+            this.fecha.TabIndex = 4;
+            this.fecha.Text = "fecha";
+            // 
+            // hora
+            // 
+            this.hora.AutoSize = true;
+            this.hora.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hora.Location = new System.Drawing.Point(57, 18);
+            this.hora.Name = "hora";
+            this.hora.Size = new System.Drawing.Size(35, 17);
+            this.hora.TabIndex = 3;
+            this.hora.Text = "hora";
             // 
             // EstadoCivil
             // 
             this.EstadoCivil.AutoSize = true;
-            this.EstadoCivil.Location = new System.Drawing.Point(3, 77);
+            this.EstadoCivil.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EstadoCivil.Location = new System.Drawing.Point(70, 190);
             this.EstadoCivil.Name = "EstadoCivil";
-            this.EstadoCivil.Size = new System.Drawing.Size(59, 13);
+            this.EstadoCivil.Size = new System.Drawing.Size(76, 17);
             this.EstadoCivil.TabIndex = 2;
             this.EstadoCivil.Text = "EstadoCivil";
             // 
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(3, 50);
+            this.Nombre.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre.Location = new System.Drawing.Point(73, 166);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(44, 13);
+            this.Nombre.Size = new System.Drawing.Size(55, 17);
             this.Nombre.TabIndex = 1;
             this.Nombre.Text = "Nombre";
             // 
             // Cargo
             // 
             this.Cargo.AutoSize = true;
-            this.Cargo.Location = new System.Drawing.Point(3, 26);
+            this.Cargo.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cargo.Location = new System.Drawing.Point(70, 140);
             this.Cargo.Name = "Cargo";
-            this.Cargo.Size = new System.Drawing.Size(35, 13);
+            this.Cargo.Size = new System.Drawing.Size(43, 17);
             this.Cargo.TabIndex = 0;
             this.Cargo.Text = "Cargo";
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2});
+            this.shapeContainer2.Size = new System.Drawing.Size(271, 450);
+            this.shapeContainer2.TabIndex = 5;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 2;
+            this.lineShape2.X2 = 198;
+            this.lineShape2.Y1 = 94;
+            this.lineShape2.Y2 = 94;
             // 
             // Colores
             // 
@@ -268,16 +363,37 @@
             this.Pedidos.Name = "Pedidos";
             this.Pedidos.Size = new System.Drawing.Size(110, 44);
             this.Pedidos.TabIndex = 15;
-            this.Pedidos.Text = "Pedidos";
+            this.Pedidos.Text = "Proveedores";
             this.Pedidos.UseVisualStyleBackColor = false;
+            this.Pedidos.Click += new System.EventHandler(this.Pedidos_Click);
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(880, 450);
+            this.shapeContainer1.TabIndex = 24;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 594;
+            this.lineShape1.X2 = 593;
+            this.lineShape1.Y1 = 3;
+            this.lineShape1.Y2 = 404;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panel2.Controls.Add(this.brnCerrarSesion);
+            this.panel2.Controls.Add(this.shapeContainer3);
             this.panel2.Location = new System.Drawing.Point(1, 403);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(799, 48);
+            this.panel2.Size = new System.Drawing.Size(594, 48);
             this.panel2.TabIndex = 17;
             // 
             // brnCerrarSesion
@@ -297,12 +413,51 @@
             this.brnCerrarSesion.UseVisualStyleBackColor = false;
             this.brnCerrarSesion.Click += new System.EventHandler(this.brnCerrarSesion_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Cargo:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 165);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 18);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Nombre:";
+            // 
+            // shapeContainer3
+            // 
+            this.shapeContainer3.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer3.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer3.Name = "shapeContainer3";
+            this.shapeContainer3.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape3});
+            this.shapeContainer3.Size = new System.Drawing.Size(594, 48);
+            this.shapeContainer3.TabIndex = 18;
+            this.shapeContainer3.TabStop = false;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 2;
+            this.lineShape3.X2 = 592;
+            this.lineShape3.Y1 = 0;
+            this.lineShape3.Y2 = -1;
+            // 
             // PrincipalGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(880, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -346,5 +501,18 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Marcas;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label fecha;
+        private System.Windows.Forms.Label hora;
+        private System.Windows.Forms.Label label1;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
     }
 }

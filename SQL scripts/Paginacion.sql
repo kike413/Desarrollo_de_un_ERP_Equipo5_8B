@@ -34,3 +34,22 @@ as return
 select * from Colores where estatus='A' order by idColor offset (@pagina+-1)*10 
 rows fetch next 10 rows only
 go
+/**
+Paginación productos
+**/
+create function paginacion_productos (@pagina int)
+returns table
+as return
+select * from Productos where estatus='A' order by idProducto offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
+/**
+Paginación provedor
+**/
+create function paginacion_proveedores (@pagina int)
+returns table
+as return
+select * from Proveedores where estatus='A' order by idProveedor offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
+
