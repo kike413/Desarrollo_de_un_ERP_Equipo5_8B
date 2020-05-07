@@ -40,7 +40,17 @@ Paginación productos
 create function paginacion_productos (@pagina int)
 returns table
 as return
-select * from Productos where estatus='A' order by idProducto offset (@pagina+-1)*10 
+select p.idProducto,p.nombre,p.descripcion,p.puntoReorden,p.genero,
+p.precioCompra,p.precioVenta,p.estatus,p.materia,m.nombre as marca,e.nombre as estilo,c.nombre as categoria
+from Productos p
+join Categorias c
+on p.idCategoria=c.idCategoria
+join Estilos e
+on p.idEstilo=e.idEstilo
+join Marcas m
+on m.idMarca=p.idMarca
+where c.idCategoria=p.idCategoria and e.idEstilo=p.idEstilo and p.idMarca=m.idMarca and p.estatus='A'
+order by p.idProducto offset (@pagina+-1)*10 
 rows fetch next 10 rows only
 go
 /**
@@ -49,7 +59,26 @@ Paginación provedor
 create function paginacion_proveedores (@pagina int)
 returns table
 as return
-select * from Proveedores where estatus='A' order by idProveedor offset (@pagina+-1)*10 
+select p.idProveedor,p.nombre,p.telefono,p.email,p.direccion,p.colonia,p.codigoPostal,c.nombre as ciudad 
+from Proveedores p 
+join Ciudades c
+on p.idCiudad=c.idCiudad
+where c.idCiudad=p.idCiudad and p.estatus='A' order by idProveedor offset (@pagina+-1)*10 
 rows fetch next 10 rows only
 go
-
+/**
+Paginación detalle producto
+**/
+create function paginacion_detalleproducto (@pagina int)
+returns table
+as return
+select d.idProductoDetalle,d.talla,d.existencia,c.nombre as Color,p.nombre as Producto
+from DetalleProductos d
+join Colores c
+on d.idColor=c.idColor
+join Productos p
+on p.idProducto=d.idProducto
+where c.idColor=d.idColor and p.idProducto=d.idProducto and d.estatus='A'
+order by d.idProductoDetalle offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go

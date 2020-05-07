@@ -142,11 +142,15 @@ go
 --------------------------Detalle Productos
 create proc EditarDetalleProductos
 @talla float,
-@existencia integer,
+@existencia int,
+@idColor int,
+@idProducto int,
 @id int
 as
-update DetalleProductos set talla=@talla, existencia=@existencia where idProductoDetalle=@id
+update DetalleProductos set talla=@talla, existencia=@existencia , idColor=@idColor, idProducto=@idProducto where idProductoDetalle=@id
 go
+
+
 
 create proc EliminarDetalleProductos
 @id int
