@@ -13,6 +13,7 @@ namespace Datos
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         int pagina = 0;
+        int id = 0;
         public DataTable Mostrar(int pagina)
         {
             //sql
@@ -123,6 +124,49 @@ namespace Datos
                 }
             }
 
+        }
+        //para el buscador
+        public DataTable MostrarTodo(string filtro)
+        {
+            //sql
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select p.idProveedor,p.nombre,p.telefono,p.email,p.direccion,p.colonia,p.codigoPostal,c.nombre as ciudad " +
+                        " from proveedores p join Ciudades c on p.idciudad=c.idciudad " +
+                        "where p.nombre like('%" + filtro + "%') and p.estatus='A'";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    tabla.Load(reader);
+                    connection.Close();
+                    return tabla;
+                }
+            }
+            //procedimiento
+        }
+
+        public int obtenerIdCiudad(string campo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select p.idCiudad from proveedores p " +
+                        "join Ciudades c " +
+                        "on p.idCiudad = c.idCiudad " +
+                        "where c.nombre = '" + campo + "'";
+                    command.CommandType = CommandType.Text;
+                    id = Convert.ToInt32(command.ExecuteScalar());
+                    Console.WriteLine("paginas " + pagina);
+                    connection.Close();
+                    return id;
+                }
+            }
         }
     }
 }

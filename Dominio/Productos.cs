@@ -45,5 +45,30 @@ namespace Dominio
             int pags = pdao.obtenerPaginas();
             return pags;
         }
+
+        public int obtenerIdCat(string campo)
+        {
+            int ids = pdao.obtenerIdCat(campo);
+            return ids;
+        }
+
+        public int obtenerIdMar(string campo)
+        {
+            int ids = pdao.obtenerIdMarca(campo);
+            return ids;
+        }
+
+        public int obtenerIdEst(string campo)
+        {
+            int ids = pdao.obtenerIdEstilo(campo);
+            return ids;
+        }
+
+        public DataTable MostrarProductoFiltro(string filtro)
+        {
+            DataTable tabla = new DataTable();
+            tabla = pdao.MostrarTodo(filtro);
+            return tabla;
+        }
     }
 }

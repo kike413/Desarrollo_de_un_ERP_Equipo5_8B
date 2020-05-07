@@ -291,7 +291,7 @@ namespace Presentacion
                 txtDireccion.Text = dataGridView1.CurrentRow.Cells["direccion"].Value.ToString();
                 txtColonia.Text = dataGridView1.CurrentRow.Cells["colonia"].Value.ToString();
                 txtCodigop.Text = dataGridView1.CurrentRow.Cells["codigopostal"].Value.ToString();
-                txtCiudad.Text = dataGridView1.CurrentRow.Cells["idCiudad"].Value.ToString();
+                txtCiudad.Text = Convert.ToString(proveedoresN.obtenerIdCiudad(dataGridView1.CurrentRow.Cells["ciudad"].Value.ToString()));
                 idProveedor = dataGridView1.CurrentRow.Cells["idProveedor"].Value.ToString();
             }
             else
@@ -309,6 +309,19 @@ namespace Presentacion
             }
             else
                 MessageBox.Show("Seleccione el provedor que quiere editar.");
+        }
+
+        private void buscador_TextChanged(object sender, EventArgs e)
+        {
+            if (buscador.Text == "")
+            {
+                MostrarProveedores();
+            }
+            else
+            {
+                dataGridView1.DataSource = proveedoresN.MostrarProveedoresFiltro(buscador.Text);
+                dataGridView1.ClearSelection();
+            }
         }
     }
 }

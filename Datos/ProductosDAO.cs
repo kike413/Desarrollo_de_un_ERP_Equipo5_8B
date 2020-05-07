@@ -13,6 +13,7 @@ namespace Datos
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         int pagina = 0;
+        int id = 0;
         public DataTable Mostrar(int pagina)
         {
             //sql
@@ -130,6 +131,91 @@ namespace Datos
                 }
             }
 
+        }
+
+        public int obtenerIdCat(string campo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select p.idCategoria from Productos p " +
+                        "join Categorias c " +
+                        "on p.idCategoria = c.idCategoria " +
+                        "where c.nombre = '"+campo+"'";
+                    command.CommandType = CommandType.Text;
+                    id = Convert.ToInt32(command.ExecuteScalar());
+                    Console.WriteLine("paginas " + pagina);
+                    connection.Close();
+                    return id;
+                }
+            }
+        }
+
+        public int obtenerIdMarca(string campo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select p.idMarca from Productos p " +
+                        "join Marcas m " +
+                        "on p.idMarca = m.idMarca " +
+                        "where m.nombre = '" + campo + "'";
+                    command.CommandType = CommandType.Text;
+                    id = Convert.ToInt32(command.ExecuteScalar());
+                    Console.WriteLine("paginas " + pagina);
+                    connection.Close();
+                    return id;
+                }
+            }
+        }
+
+        public int obtenerIdEstilo(string campo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select p.idEstilo from Productos p " +
+                        "join estilos e " +
+                        "on p.idEstilo = e.idEstilo " +
+                        "where e.nombre = '" + campo + "'";
+                    command.CommandType = CommandType.Text;
+                    id = Convert.ToInt32(command.ExecuteScalar());
+                    Console.WriteLine("paginas " + pagina);
+                    connection.Close();
+                    return id;
+                }
+            }
+        }
+
+        public DataTable MostrarTodo(string filtro)
+        {
+            //sql
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select p.idProducto,p.nombre,p.descripcion,p.puntoReorden,p.genero, p.precioCompra,p.precioVenta,p.estatus,p.materia,m.nombre as marca,e.nombre as estilo,c.nombre as categoria from Productos p join Categorias c on p.idCategoria = c.idCategoria join Estilos e on p.idEstilo = e.idEstilo join Marcas m on m.idMarca = p.idMarca where p.idProducto like('%" + filtro + "%') or p.nombre like ('" + filtro + "') " +
+                        "or p.materia like('%" + filtro + "%') or m.nombre like('%" + filtro + "%') or e.nombre like('%" + filtro + "%')" +
+                        " or c.nombre like('%" + filtro + "%') and p.estatus='A'";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    tabla.Load(reader);
+                    connection.Close();
+                    return tabla;
+                }
+            }
+            //procedimiento
         }
     }
 }

@@ -38,5 +38,18 @@ namespace Dominio
             int pags = provedores.obtenerPaginas();
             return pags;
         }
+
+        public DataTable MostrarProveedoresFiltro(string filtro)
+        {
+            DataTable tabla = new DataTable();
+            tabla = provedores.MostrarTodo(filtro);
+            return tabla;
+        }
+
+        public int obtenerIdCiudad(string campo)
+        {
+            int ids = provedores.obtenerIdCiudad(campo);
+            return ids;
+        }
     }
 }

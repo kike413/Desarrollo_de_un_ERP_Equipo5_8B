@@ -33,6 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtColor = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtProducto = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtExistencia = new System.Windows.Forms.TextBox();
             this.txtTalla = new System.Windows.Forms.TextBox();
             this.Existencia = new System.Windows.Forms.Label();
@@ -45,6 +49,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.retroceder = new System.Windows.Forms.Button();
+            this.avanza = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -53,6 +59,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
+            this.panel1.Controls.Add(this.txtColor);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtProducto);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtExistencia);
             this.panel1.Controls.Add(this.txtTalla);
             this.panel1.Controls.Add(this.Existencia);
@@ -65,6 +75,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 450);
             this.panel1.TabIndex = 7;
+            // 
+            // txtColor
+            // 
+            this.txtColor.Location = new System.Drawing.Point(75, 137);
+            this.txtColor.Name = "txtColor";
+            this.txtColor.Size = new System.Drawing.Size(138, 20);
+            this.txtColor.TabIndex = 28;
+            this.txtColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtColor_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 16);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Color:";
+            // 
+            // txtProducto
+            // 
+            this.txtProducto.Location = new System.Drawing.Point(76, 175);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(138, 20);
+            this.txtProducto.TabIndex = 26;
+            this.txtProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProducto_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 16);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Producto:";
             // 
             // txtExistencia
             // 
@@ -87,7 +135,7 @@
             this.Existencia.AutoSize = true;
             this.Existencia.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Existencia.ForeColor = System.Drawing.Color.White;
-            this.Existencia.Location = new System.Drawing.Point(3, 102);
+            this.Existencia.Location = new System.Drawing.Point(3, 106);
             this.Existencia.Name = "Existencia";
             this.Existencia.Size = new System.Drawing.Size(66, 16);
             this.Existencia.TabIndex = 22;
@@ -129,7 +177,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(75, 146);
+            this.btnGuardar.Location = new System.Drawing.Point(75, 212);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(118, 24);
             this.btnGuardar.TabIndex = 3;
@@ -142,7 +190,7 @@
             this.Talla.AutoSize = true;
             this.Talla.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Talla.ForeColor = System.Drawing.Color.White;
-            this.Talla.Location = new System.Drawing.Point(3, 61);
+            this.Talla.Location = new System.Drawing.Point(33, 61);
             this.Talla.Name = "Talla";
             this.Talla.Size = new System.Drawing.Size(36, 16);
             this.Talla.TabIndex = 1;
@@ -156,7 +204,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(149, 305);
+            this.btnEliminar.Location = new System.Drawing.Point(150, 342);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 10;
@@ -172,7 +220,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(41, 305);
+            this.btnEditar.Location = new System.Drawing.Point(35, 342);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 9;
@@ -199,7 +247,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 61);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 59);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
@@ -217,7 +265,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(241, 211);
+            this.dataGridView1.Size = new System.Drawing.Size(517, 211);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -226,7 +274,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(38, 27);
+            this.label1.Location = new System.Drawing.Point(133, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 16);
             this.label1.TabIndex = 11;
@@ -236,12 +284,46 @@
             // 
             this.error.ContainerControl = this;
             // 
+            // retroceder
+            // 
+            this.retroceder.BackColor = System.Drawing.Color.RoyalBlue;
+            this.retroceder.FlatAppearance.BorderSize = 0;
+            this.retroceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.retroceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.retroceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retroceder.ForeColor = System.Drawing.Color.White;
+            this.retroceder.Location = new System.Drawing.Point(41, 276);
+            this.retroceder.Name = "retroceder";
+            this.retroceder.Size = new System.Drawing.Size(38, 23);
+            this.retroceder.TabIndex = 31;
+            this.retroceder.Text = "<";
+            this.retroceder.UseVisualStyleBackColor = false;
+            this.retroceder.Click += new System.EventHandler(this.retroceder_Click);
+            // 
+            // avanza
+            // 
+            this.avanza.BackColor = System.Drawing.Color.RoyalBlue;
+            this.avanza.FlatAppearance.BorderSize = 0;
+            this.avanza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.avanza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.avanza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avanza.ForeColor = System.Drawing.Color.White;
+            this.avanza.Location = new System.Drawing.Point(504, 276);
+            this.avanza.Name = "avanza";
+            this.avanza.Size = new System.Drawing.Size(38, 23);
+            this.avanza.TabIndex = 32;
+            this.avanza.Text = ">";
+            this.avanza.UseVisualStyleBackColor = false;
+            this.avanza.Click += new System.EventHandler(this.avanza_Click);
+            // 
             // DetalleProductoGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.avanza);
+            this.Controls.Add(this.retroceder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -274,5 +356,11 @@
         private System.Windows.Forms.ErrorProvider error;
         private System.Windows.Forms.TextBox txtExistencia;
         private System.Windows.Forms.TextBox txtTalla;
+        private System.Windows.Forms.TextBox txtColor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtProducto;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button retroceder;
+        private System.Windows.Forms.Button avanza;
     }
 }
