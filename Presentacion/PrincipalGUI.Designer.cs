@@ -39,6 +39,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,10 +61,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.brnCerrarSesion = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.btnDetalles = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -77,6 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.btnDetalles);
             this.panel1.Controls.Add(this.Marcas);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox5);
@@ -134,7 +136,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(256, 164);
+            this.pictureBox4.Location = new System.Drawing.Point(256, 232);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(110, 105);
             this.pictureBox4.TabIndex = 20;
@@ -143,7 +145,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(473, 164);
+            this.pictureBox3.Location = new System.Drawing.Point(473, 232);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(110, 105);
             this.pictureBox3.TabIndex = 19;
@@ -152,7 +154,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(24, 164);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 232);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(110, 105);
             this.pictureBox2.TabIndex = 18;
@@ -186,6 +188,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(271, 450);
             this.panel3.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 165);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 18);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Nombre:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Cargo:";
             // 
             // label3
             // 
@@ -295,7 +317,7 @@
             this.Colores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Colores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Colores.ForeColor = System.Drawing.Color.LightGray;
-            this.Colores.Location = new System.Drawing.Point(473, 263);
+            this.Colores.Location = new System.Drawing.Point(473, 331);
             this.Colores.Name = "Colores";
             this.Colores.Size = new System.Drawing.Size(110, 47);
             this.Colores.TabIndex = 15;
@@ -327,7 +349,7 @@
             this.Estilos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Estilos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Estilos.ForeColor = System.Drawing.Color.LightGray;
-            this.Estilos.Location = new System.Drawing.Point(256, 263);
+            this.Estilos.Location = new System.Drawing.Point(256, 331);
             this.Estilos.Name = "Estilos";
             this.Estilos.Size = new System.Drawing.Size(110, 47);
             this.Estilos.TabIndex = 15;
@@ -359,7 +381,7 @@
             this.Pedidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Pedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Pedidos.ForeColor = System.Drawing.Color.LightGray;
-            this.Pedidos.Location = new System.Drawing.Point(24, 263);
+            this.Pedidos.Location = new System.Drawing.Point(24, 331);
             this.Pedidos.Name = "Pedidos";
             this.Pedidos.Size = new System.Drawing.Size(110, 44);
             this.Pedidos.TabIndex = 15;
@@ -413,26 +435,6 @@
             this.brnCerrarSesion.UseVisualStyleBackColor = false;
             this.brnCerrarSesion.Click += new System.EventHandler(this.brnCerrarSesion_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 18);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Cargo:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 165);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 18);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Nombre:";
-            // 
             // shapeContainer3
             // 
             this.shapeContainer3.Location = new System.Drawing.Point(0, 0);
@@ -451,6 +453,22 @@
             this.lineShape3.X2 = 592;
             this.lineShape3.Y1 = 0;
             this.lineShape3.Y2 = -1;
+            // 
+            // btnDetalles
+            // 
+            this.btnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnDetalles.FlatAppearance.BorderSize = 0;
+            this.btnDetalles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalles.ForeColor = System.Drawing.Color.LightGray;
+            this.btnDetalles.Location = new System.Drawing.Point(24, 150);
+            this.btnDetalles.Name = "btnDetalles";
+            this.btnDetalles.Size = new System.Drawing.Size(110, 49);
+            this.btnDetalles.TabIndex = 25;
+            this.btnDetalles.Text = "Detalles";
+            this.btnDetalles.UseVisualStyleBackColor = false;
+            this.btnDetalles.Click += new System.EventHandler(this.button1_Click);
             // 
             // PrincipalGUI
             // 
@@ -514,5 +532,6 @@
         private System.Windows.Forms.Label label4;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
+        private System.Windows.Forms.Button btnDetalles;
     }
 }

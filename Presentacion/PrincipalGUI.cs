@@ -87,5 +87,13 @@ namespace Presentacion
             proV.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //btn detalles
+            DetalleProductoGUI det = new DetalleProductoGUI();
+            det.Show();
+            this.Hide();
+        }
     }
 }
