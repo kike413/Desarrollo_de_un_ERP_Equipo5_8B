@@ -21,6 +21,7 @@ namespace Presentacion
         private int pag = 1;
         private int numPags = 0;
         private int auxiliar = 0;
+        private string campo = "";
         public ProductosGUI()
         {
             InitializeComponent();
@@ -91,9 +92,14 @@ namespace Presentacion
                 txtPrecioCompra.Text = dataGridView1.CurrentRow.Cells["precioCompra"].Value.ToString();
                 txtPrecioVenta.Text = dataGridView1.CurrentRow.Cells["precioVenta"].Value.ToString();
                 txtMaterial.Text = dataGridView1.CurrentRow.Cells["materia"].Value.ToString();
-                txtMarca.Text = dataGridView1.CurrentRow.Cells["idMarca"].Value.ToString();
-                txtEstilo.Text = dataGridView1.CurrentRow.Cells["idEstilo"].Value.ToString();
-                txtCategoria.Text = dataGridView1.CurrentRow.Cells["idCategoria"].Value.ToString();
+
+                txtMarca.Text = Convert.ToString(prodN.obtenerIdMar(dataGridView1.CurrentRow.Cells["marca"].Value.ToString()));
+
+                txtEstilo.Text = Convert.ToString(prodN.obtenerIdEst(dataGridView1.CurrentRow.Cells["estilo"].Value.ToString()));
+
+                campo = dataGridView1.CurrentRow.Cells["categoria"].Value.ToString();
+                txtCategoria.Text = Convert.ToString(prodN.obtenerIdCat(campo));
+
                 idProducto = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
             }
             else
@@ -382,6 +388,32 @@ namespace Presentacion
                     MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void buscador_TextChanged(object sender, EventArgs e)
+        {
+            if (buscador.Text == "")
+            {
+                MostrarProductos();
+            }
+            else
+            {
+                dataGridView1.DataSource = prodN.MostrarProductoFiltro(buscador.Text);
+                dataGridView1.ClearSelection();
+            }
+        }
+
+        private void buscador_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (buscador.Text == "")
+            {
+                MostrarProductos();
+            }
+            else
+            {
+                dataGridView1.DataSource = prodN.MostrarProductoFiltro(buscador.Text);
+                dataGridView1.ClearSelection();
             }
         }
     }

@@ -64,6 +64,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.buscador = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -445,7 +447,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(176, 55);
+            this.label1.Location = new System.Drawing.Point(183, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 27;
@@ -463,12 +465,34 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(34, 46);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 16);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Nombre:";
+            // 
+            // buscador
+            // 
+            this.buscador.Location = new System.Drawing.Point(95, 45);
+            this.buscador.Name = "buscador";
+            this.buscador.Size = new System.Drawing.Size(249, 20);
+            this.buscador.TabIndex = 32;
+            this.buscador.TextChanged += new System.EventHandler(this.buscador_TextChanged);
+            this.buscador.KeyUp += new System.Windows.Forms.KeyEventHandler(this.buscador_KeyUp);
+            // 
             // ProductosGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(940, 450);
+            this.Controls.Add(this.buscador);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.avanza);
             this.Controls.Add(this.retroceder);
             this.Controls.Add(this.Regresar);
@@ -524,5 +548,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox buscador;
+        private System.Windows.Forms.Label label9;
     }
 }
