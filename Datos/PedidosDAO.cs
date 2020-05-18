@@ -80,6 +80,28 @@ namespace Datos
             //procedimiento
         }
 
+        /*
+        * insertar
+        */
+        public void Insertar(string fechaRegistro,string fechaREcepcion,float totalPagar,float cantidadPagada,
+            int idProveedor,int idEmpleado)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "insert into Pedidos values('"+fechaRegistro+"','"+fechaREcepcion+"',"+totalPagar+","+
+                        cantidadPagada+",default,"+idProveedor+","+idEmpleado+")";
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    connection.Close();
+                }
+            }
+        }
+
         public int obtenerPaginas()
         {
             //sql

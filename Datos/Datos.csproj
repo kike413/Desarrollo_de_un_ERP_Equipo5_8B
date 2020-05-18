@@ -48,6 +48,7 @@
     <Compile Include="EstilosDAO.cs" />
     <Compile Include="InicioSesionDAO.cs" />
     <Compile Include="MarcasDAO.cs" />
+    <Compile Include="PedidosDAO.cs" />
     <Compile Include="ProductosDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresDAO.cs" />

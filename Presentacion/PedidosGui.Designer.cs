@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.avanza = new System.Windows.Forms.Button();
             this.retroceder = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -39,19 +39,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtProveedor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCantidadPagada = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTotalPagar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtFechaRecepcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.fecha = new System.Windows.Forms.Label();
-            this.txtFechaRegistro = new System.Windows.Forms.TextBox();
+            this.comboProveedor = new System.Windows.Forms.ComboBox();
+            this.comboEmpleado = new System.Windows.Forms.ComboBox();
+            this.dateRecepcion = new System.Windows.Forms.DateTimePicker();
+            this.dateRegistro = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -95,14 +95,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
@@ -110,21 +110,21 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(636, 252);
             this.dataGridView1.TabIndex = 34;
@@ -173,20 +173,20 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
+            this.panel1.Controls.Add(this.dateRegistro);
+            this.panel1.Controls.Add(this.dateRecepcion);
+            this.panel1.Controls.Add(this.comboEmpleado);
+            this.panel1.Controls.Add(this.comboProveedor);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txtEmpleado);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtProveedor);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtCantidadPagada);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtTotalPagar);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtFechaRecepcion);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.fecha);
-            this.panel1.Controls.Add(this.txtFechaRegistro);
             this.panel1.Location = new System.Drawing.Point(721, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 317);
@@ -197,36 +197,22 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(50, 219);
+            this.label8.Location = new System.Drawing.Point(63, 234);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 16);
             this.label8.TabIndex = 17;
             this.label8.Text = "Empleado:";
-            // 
-            // txtEmpleado
-            // 
-            this.txtEmpleado.Location = new System.Drawing.Point(130, 215);
-            this.txtEmpleado.Name = "txtEmpleado";
-            this.txtEmpleado.Size = new System.Drawing.Size(138, 20);
-            this.txtEmpleado.TabIndex = 18;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(61, 193);
+            this.label7.Location = new System.Drawing.Point(61, 203);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 16);
             this.label7.TabIndex = 15;
             this.label7.Text = "Proveedor:";
-            // 
-            // txtProveedor
-            // 
-            this.txtProveedor.Location = new System.Drawing.Point(130, 189);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(138, 20);
-            this.txtProveedor.TabIndex = 16;
             // 
             // label6
             // 
@@ -241,7 +227,7 @@
             // 
             // txtCantidadPagada
             // 
-            this.txtCantidadPagada.Location = new System.Drawing.Point(130, 163);
+            this.txtCantidadPagada.Location = new System.Drawing.Point(130, 167);
             this.txtCantidadPagada.Name = "txtCantidadPagada";
             this.txtCantidadPagada.Size = new System.Drawing.Size(138, 20);
             this.txtCantidadPagada.TabIndex = 14;
@@ -269,18 +255,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(28, 115);
+            this.label3.Location = new System.Drawing.Point(28, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Fecha recepción:";
-            // 
-            // txtFechaRecepcion
-            // 
-            this.txtFechaRecepcion.Location = new System.Drawing.Point(130, 111);
-            this.txtFechaRecepcion.Name = "txtFechaRecepcion";
-            this.txtFechaRecepcion.Size = new System.Drawing.Size(138, 20);
-            this.txtFechaRecepcion.TabIndex = 10;
             // 
             // label4
             // 
@@ -307,24 +286,51 @@
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // fecha
             // 
             this.fecha.AutoSize = true;
             this.fecha.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fecha.ForeColor = System.Drawing.Color.White;
-            this.fecha.Location = new System.Drawing.Point(39, 89);
+            this.fecha.Location = new System.Drawing.Point(39, 80);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(88, 16);
             this.fecha.TabIndex = 1;
             this.fecha.Text = "Fecha registro:";
             // 
-            // txtFechaRegistro
+            // comboProveedor
             // 
-            this.txtFechaRegistro.Location = new System.Drawing.Point(130, 85);
-            this.txtFechaRegistro.Name = "txtFechaRegistro";
-            this.txtFechaRegistro.Size = new System.Drawing.Size(138, 20);
-            this.txtFechaRegistro.TabIndex = 2;
+            this.comboProveedor.FormattingEnabled = true;
+            this.comboProveedor.Location = new System.Drawing.Point(130, 198);
+            this.comboProveedor.Name = "comboProveedor";
+            this.comboProveedor.Size = new System.Drawing.Size(138, 21);
+            this.comboProveedor.TabIndex = 18;
+            // 
+            // comboEmpleado
+            // 
+            this.comboEmpleado.FormattingEnabled = true;
+            this.comboEmpleado.Location = new System.Drawing.Point(130, 233);
+            this.comboEmpleado.Name = "comboEmpleado";
+            this.comboEmpleado.Size = new System.Drawing.Size(138, 21);
+            this.comboEmpleado.TabIndex = 19;
+            // 
+            // dateRecepcion
+            // 
+            this.dateRecepcion.Checked = false;
+            this.dateRecepcion.Location = new System.Drawing.Point(130, 107);
+            this.dateRecepcion.Name = "dateRecepcion";
+            this.dateRecepcion.Size = new System.Drawing.Size(136, 20);
+            this.dateRecepcion.TabIndex = 20;
+            this.dateRecepcion.Value = new System.DateTime(2020, 5, 18, 0, 0, 0, 0);
+            // 
+            // dateRegistro
+            // 
+            this.dateRegistro.Location = new System.Drawing.Point(130, 76);
+            this.dateRegistro.Name = "dateRegistro";
+            this.dateRegistro.Size = new System.Drawing.Size(136, 20);
+            this.dateRegistro.TabIndex = 21;
+            this.dateRegistro.Value = new System.DateTime(2020, 5, 18, 0, 0, 0, 0);
             // 
             // PedidosGui
             // 
@@ -360,18 +366,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtEmpleado;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCantidadPagada;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTotalPagar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtFechaRecepcion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label fecha;
-        private System.Windows.Forms.TextBox txtFechaRegistro;
+        private System.Windows.Forms.ComboBox comboEmpleado;
+        private System.Windows.Forms.ComboBox comboProveedor;
+        private System.Windows.Forms.DateTimePicker dateRegistro;
+        private System.Windows.Forms.DateTimePicker dateRecepcion;
     }
 }
