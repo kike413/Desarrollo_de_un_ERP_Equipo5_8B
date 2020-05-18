@@ -95,5 +95,12 @@ namespace Presentacion
             det.Show();
             this.Hide();
         }
+
+        private void btnPedido_Click(object sender, EventArgs e)
+        {
+            PedidosGui pedidos = new PedidosGui();
+            pedidos.Show();
+            this.Hide();
+        }
     }
 }

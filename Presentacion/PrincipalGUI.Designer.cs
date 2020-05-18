@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalGUI));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDetalles = new System.Windows.Forms.Button();
             this.Marcas = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -63,7 +64,7 @@
             this.brnCerrarSesion = new System.Windows.Forms.Button();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.btnDetalles = new System.Windows.Forms.Button();
+            this.btnPedido = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -78,6 +79,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.btnPedido);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnDetalles);
             this.panel1.Controls.Add(this.Marcas);
             this.panel1.Controls.Add(this.pictureBox6);
@@ -96,8 +99,24 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 450);
+            this.panel1.Size = new System.Drawing.Size(877, 554);
             this.panel1.TabIndex = 15;
+            // 
+            // btnDetalles
+            // 
+            this.btnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnDetalles.FlatAppearance.BorderSize = 0;
+            this.btnDetalles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalles.ForeColor = System.Drawing.Color.LightGray;
+            this.btnDetalles.Location = new System.Drawing.Point(24, 150);
+            this.btnDetalles.Name = "btnDetalles";
+            this.btnDetalles.Size = new System.Drawing.Size(110, 49);
+            this.btnDetalles.TabIndex = 25;
+            this.btnDetalles.Text = "Detalles";
+            this.btnDetalles.UseVisualStyleBackColor = false;
+            this.btnDetalles.Click += new System.EventHandler(this.button1_Click);
             // 
             // Marcas
             // 
@@ -184,9 +203,9 @@
             this.panel3.Controls.Add(this.Cargo);
             this.panel3.Controls.Add(this.shapeContainer2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(609, 0);
+            this.panel3.Location = new System.Drawing.Point(606, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(271, 450);
+            this.panel3.Size = new System.Drawing.Size(271, 554);
             this.panel3.TabIndex = 16;
             // 
             // label5
@@ -297,7 +316,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2});
-            this.shapeContainer2.Size = new System.Drawing.Size(271, 450);
+            this.shapeContainer2.Size = new System.Drawing.Size(271, 554);
             this.shapeContainer2.TabIndex = 5;
             this.shapeContainer2.TabStop = false;
             // 
@@ -396,7 +415,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(880, 450);
+            this.shapeContainer1.Size = new System.Drawing.Size(877, 554);
             this.shapeContainer1.TabIndex = 24;
             this.shapeContainer1.TabStop = false;
             // 
@@ -413,7 +432,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panel2.Controls.Add(this.brnCerrarSesion);
             this.panel2.Controls.Add(this.shapeContainer3);
-            this.panel2.Location = new System.Drawing.Point(1, 403);
+            this.panel2.Location = new System.Drawing.Point(3, 494);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(594, 48);
             this.panel2.TabIndex = 17;
@@ -454,29 +473,28 @@
             this.lineShape3.Y1 = 0;
             this.lineShape3.Y2 = -1;
             // 
-            // btnDetalles
+            // btnPedido
             // 
-            this.btnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnDetalles.FlatAppearance.BorderSize = 0;
-            this.btnDetalles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalles.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDetalles.Location = new System.Drawing.Point(24, 150);
-            this.btnDetalles.Name = "btnDetalles";
-            this.btnDetalles.Size = new System.Drawing.Size(110, 49);
-            this.btnDetalles.TabIndex = 25;
-            this.btnDetalles.Text = "Detalles";
-            this.btnDetalles.UseVisualStyleBackColor = false;
-            this.btnDetalles.Click += new System.EventHandler(this.button1_Click);
+            this.btnPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPedido.FlatAppearance.BorderSize = 0;
+            this.btnPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPedido.ForeColor = System.Drawing.Color.LightGray;
+            this.btnPedido.Location = new System.Drawing.Point(24, 381);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(110, 38);
+            this.btnPedido.TabIndex = 26;
+            this.btnPedido.Text = "Pedidos";
+            this.btnPedido.UseVisualStyleBackColor = false;
+            this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
             // PrincipalGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(880, 450);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(877, 554);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PrincipalGUI";
@@ -533,5 +551,6 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private System.Windows.Forms.Button btnDetalles;
+        private System.Windows.Forms.Button btnPedido;
     }
 }
