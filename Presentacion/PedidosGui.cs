@@ -163,7 +163,20 @@ namespace Presentacion
                 idPedido = dataGridView1.CurrentRow.Cells["idPedido"].Value.ToString();
             }
             else
-                MessageBox.Show("Seleccione la categoría que quiere editar.");
+                MessageBox.Show("Seleccione el pedido que quiere editar.");
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                idPedido = dataGridView1.CurrentRow.Cells["idPedido"].Value.ToString();
+                pedN.EliminarPedido(idPedido);
+                MessageBox.Show("Eliminado correctamente.");
+                MostrarPedidos();
+            }
+            else
+                MessageBox.Show("Seleccione el pedido que quiere eliminar.");
         }
     }
     }

@@ -253,4 +253,3 @@ as
 update Pedidos set estatus='I' where idPedido=@id
 go
 
-

@@ -26,6 +26,13 @@ namespace Dominio
             pdao.Editar(fechaRegistro, fechaREcepcion, Convert.ToSingle(totalPagar), Convert.ToSingle(cantidadPagada),
                 idProveedor, idEmpleado,Convert.ToInt32(id));
         }
+
+
+        public void EliminarPedido(string id)
+        {
+            pdao.Eliminar(Convert.ToInt32(id));
+        }
+
         public void ListarProveedores(ComboBox combo)
         {
             PedidosDAO oPed = new PedidosDAO();
