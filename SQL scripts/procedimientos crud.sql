@@ -218,5 +218,58 @@ go
 
 
 
+/*
+	Procedimientos pedidos
+*/
+select * from pedidos
+create proc EditarPedidos
+@fechaRegistro date,
+@fechaRecepcion date,
+@totalPagar float,
+@cantidadPagada float,
+@idProveedor int,
+@idEmpleado int,
+@id int
+as
+update Pedidos set fechaRegistro=@fechaRegistro,fechaRecepcion=@fechaRecepcion,totalPagar=@totalPagar,
+cantidadPagada=@cantidadPagada,idProveedor=@idProveedor,idEmpleado=@idEmpleado where idPedido=@id
+go
+
+/*procedimiento para mostrar en el COMBOBOX los proveedores*/
+create proc ListarProveedores
+as
+select * from Proveedores where estatus='A' order by nombre asc
+go
+
+/*procedimiento para mostrar en el COMBOBOX los empleados*/
+create proc ListarEmpleados
+as
+select * from Empleados order by nombre asc
+go
+--- Procedimiento almacenado para hacer DELETE a pedidos ---
+create proc EliminarPedidos
+@id int
+as
+update Pedidos set estatus='I' where idPedido=@id
+go
 
 
+--------------------------Productos Proveedor
+create proc EditarProductosProveedor
+@diasRetardo int,
+@precioEstandar float,
+@precioUltimaCompra float,
+@cantMinPedir int,
+@cantMaxPedir int,
+@id int
+as
+update ProductosProveedor set diasRetardo=@diasRetardo, precioEstandar=@precioEstandar , precioUltimaCompra=@precioUltimaCompra, cantMinPedir=@cantMinPedir, cantMaxPedir=@cantMaxPedir where idProducto=@id
+go
+
+
+
+create proc EliminarProductosProveedor
+@id int
+as
+update ProductosProveedor set estatus='I' where idProducto=@id
+go

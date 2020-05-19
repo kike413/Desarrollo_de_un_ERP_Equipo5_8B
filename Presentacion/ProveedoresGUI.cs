@@ -323,5 +323,12 @@ namespace Presentacion
                 dataGridView1.ClearSelection();
             }
         }
+
+        private void btnProductosProveedor_Click(object sender, EventArgs e)
+        {
+            ProductosProveedorGUI ProPro = new ProductosProveedorGUI();
+            ProPro.Show();
+            this.Hide();
+        }
     }
 }
