@@ -253,3 +253,23 @@ as
 update Pedidos set estatus='I' where idPedido=@id
 go
 
+
+--------------------------Productos Proveedor
+create proc EditarProductosProveedor
+@diasRetardo int,
+@precioEstandar float,
+@precioUltimaCompra float,
+@cantMinPedir int,
+@cantMaxPedir int,
+@id int
+as
+update ProductosProveedor set diasRetardo=@diasRetardo, precioEstandar=@precioEstandar , precioUltimaCompra=@precioUltimaCompra, cantMinPedir=@cantMinPedir, cantMaxPedir=@cantMaxPedir where idProducto=@id
+go
+
+
+
+create proc EliminarProductosProveedor
+@id int
+as
+update ProductosProveedor set estatus='I' where idProducto=@id
+go
