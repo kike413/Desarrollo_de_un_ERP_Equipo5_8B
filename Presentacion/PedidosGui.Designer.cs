@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.avanza = new System.Windows.Forms.Button();
             this.retroceder = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -38,6 +38,10 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateRegistro = new System.Windows.Forms.DateTimePicker();
+            this.dateRecepcion = new System.Windows.Forms.DateTimePicker();
+            this.comboEmpleado = new System.Windows.Forms.ComboBox();
+            this.comboProveedor = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.fecha = new System.Windows.Forms.Label();
-            this.comboProveedor = new System.Windows.Forms.ComboBox();
-            this.comboEmpleado = new System.Windows.Forms.ComboBox();
-            this.dateRecepcion = new System.Windows.Forms.DateTimePicker();
-            this.dateRegistro = new System.Windows.Forms.DateTimePicker();
             this.Regresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,6 +71,7 @@
             this.avanza.TabIndex = 36;
             this.avanza.Text = ">";
             this.avanza.UseVisualStyleBackColor = false;
+            this.avanza.Click += new System.EventHandler(this.avanza_Click);
             // 
             // retroceder
             // 
@@ -86,6 +87,7 @@
             this.retroceder.TabIndex = 35;
             this.retroceder.Text = "<";
             this.retroceder.UseVisualStyleBackColor = false;
+            this.retroceder.Click += new System.EventHandler(this.retroceder_Click);
             // 
             // dataGridView1
             // 
@@ -96,14 +98,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
@@ -111,21 +113,21 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(636, 252);
             this.dataGridView1.TabIndex = 34;
@@ -194,6 +196,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 317);
             this.panel1.TabIndex = 38;
+            // 
+            // dateRegistro
+            // 
+            this.dateRegistro.Location = new System.Drawing.Point(130, 76);
+            this.dateRegistro.Name = "dateRegistro";
+            this.dateRegistro.Size = new System.Drawing.Size(136, 20);
+            this.dateRegistro.TabIndex = 21;
+            this.dateRegistro.Value = new System.DateTime(2020, 5, 18, 0, 0, 0, 0);
+            // 
+            // dateRecepcion
+            // 
+            this.dateRecepcion.Location = new System.Drawing.Point(130, 107);
+            this.dateRecepcion.Name = "dateRecepcion";
+            this.dateRecepcion.Size = new System.Drawing.Size(136, 20);
+            this.dateRecepcion.TabIndex = 20;
+            this.dateRecepcion.Value = new System.DateTime(2020, 5, 18, 0, 0, 0, 0);
+            // 
+            // comboEmpleado
+            // 
+            this.comboEmpleado.FormattingEnabled = true;
+            this.comboEmpleado.Location = new System.Drawing.Point(130, 233);
+            this.comboEmpleado.Name = "comboEmpleado";
+            this.comboEmpleado.Size = new System.Drawing.Size(138, 21);
+            this.comboEmpleado.TabIndex = 19;
+            // 
+            // comboProveedor
+            // 
+            this.comboProveedor.FormattingEnabled = true;
+            this.comboProveedor.Location = new System.Drawing.Point(130, 198);
+            this.comboProveedor.Name = "comboProveedor";
+            this.comboProveedor.Size = new System.Drawing.Size(138, 21);
+            this.comboProveedor.TabIndex = 18;
             // 
             // label8
             // 
@@ -301,38 +335,6 @@
             this.fecha.Size = new System.Drawing.Size(88, 16);
             this.fecha.TabIndex = 1;
             this.fecha.Text = "Fecha registro:";
-            // 
-            // comboProveedor
-            // 
-            this.comboProveedor.FormattingEnabled = true;
-            this.comboProveedor.Location = new System.Drawing.Point(130, 198);
-            this.comboProveedor.Name = "comboProveedor";
-            this.comboProveedor.Size = new System.Drawing.Size(138, 21);
-            this.comboProveedor.TabIndex = 18;
-            // 
-            // comboEmpleado
-            // 
-            this.comboEmpleado.FormattingEnabled = true;
-            this.comboEmpleado.Location = new System.Drawing.Point(130, 233);
-            this.comboEmpleado.Name = "comboEmpleado";
-            this.comboEmpleado.Size = new System.Drawing.Size(138, 21);
-            this.comboEmpleado.TabIndex = 19;
-            // 
-            // dateRecepcion
-            // 
-            this.dateRecepcion.Location = new System.Drawing.Point(130, 107);
-            this.dateRecepcion.Name = "dateRecepcion";
-            this.dateRecepcion.Size = new System.Drawing.Size(136, 20);
-            this.dateRecepcion.TabIndex = 20;
-            this.dateRecepcion.Value = new System.DateTime(2020, 5, 18, 0, 0, 0, 0);
-            // 
-            // dateRegistro
-            // 
-            this.dateRegistro.Location = new System.Drawing.Point(130, 76);
-            this.dateRegistro.Name = "dateRegistro";
-            this.dateRegistro.Size = new System.Drawing.Size(136, 20);
-            this.dateRegistro.TabIndex = 21;
-            this.dateRegistro.Value = new System.DateTime(2020, 5, 18, 0, 0, 0, 0);
             // 
             // Regresar
             // 

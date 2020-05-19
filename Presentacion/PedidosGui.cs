@@ -178,6 +178,36 @@ namespace Presentacion
             else
                 MessageBox.Show("Seleccione el pedido que quiere eliminar.");
         }
+
+        private void retroceder_Click(object sender, EventArgs e)
+        {
+            if (pag == 1)
+            {
+                retroceder.Enabled = false;
+                MostrarPedidos();
+            }
+            else
+            {
+                pag--;
+                avanza.Enabled = true;
+                MostrarPedidos();
+            }
+        }
+
+        private void avanza_Click(object sender, EventArgs e)
+        {
+            if (pag == numPags)
+            {
+                avanza.Enabled = false;
+                MostrarPedidos();
+            }
+            else
+            {
+                pag++;
+                retroceder.Enabled = true;
+                MostrarPedidos();
+            }
+        }
     }
     }
 
