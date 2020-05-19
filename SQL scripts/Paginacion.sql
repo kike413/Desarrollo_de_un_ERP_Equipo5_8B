@@ -82,3 +82,21 @@ where c.idColor=d.idColor and p.idProducto=d.idProducto and d.estatus='A'
 order by d.idProductoDetalle offset (@pagina+-1)*10 
 rows fetch next 10 rows only
 go
+
+/**
+Paginación pedidos
+**/
+create function paginacion_pedidos (@pagina int)
+returns table
+as return
+select  p.idPedido,p.fechaRegistro,p.fechaRecepcion,p.totalPagar,p.cantidadPagada,prov.nombre as Proveedor,emp.nombre as Empleado
+from pedidos p
+join proveedores prov
+on p.idProveedor=prov.idProveedor
+join Empleados emp
+on p.idEmpleado=emp.idEmpleado
+where p.idProveedor=prov.idProveedor and p.idEmpleado=emp.idEmpleado and p.estatus='A'
+order by p.idPedido offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
+

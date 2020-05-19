@@ -232,7 +232,7 @@ create proc EditarPedidos
 @id int
 as
 update Pedidos set fechaRegistro=@fechaRegistro,fechaRecepcion=@fechaRecepcion,totalPagar=@totalPagar,
-cantidadPagada=@cantidadPagada,idProveedor=@idProveedor,idEmpleado=@idEmpleado, idPedido=@id
+cantidadPagada=@cantidadPagada,idProveedor=@idProveedor,idEmpleado=@idEmpleado where idPedido=@id
 go
 
 /*procedimiento para mostrar en el COMBOBOX los proveedores*/
@@ -252,6 +252,5 @@ create proc EliminarPedidos
 as
 update Pedidos set estatus='I' where idPedido=@id
 go
-
 
 

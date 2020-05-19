@@ -22,7 +22,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select * from paginacion_Pedidos(" + pagina + ")";
+                    command.CommandText = "select * from paginacion_pedidos(" + pagina + ")";
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     tabla.Load(reader);
@@ -32,6 +32,36 @@ namespace Datos
             }
             //procedimiento
         }
+
+
+        /*
+         * Editar
+         */
+        public void Editar(string fechaRegistro, string fechaREcepcion, float totalPagar, float cantidadPagada,
+            int idProveedor, int idEmpleado, int id)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "EditarPedidos";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@fechaRegistro", fechaRegistro);
+                    command.Parameters.AddWithValue("@fechaRecepcion", fechaREcepcion);
+                    command.Parameters.AddWithValue("@totalPagar", totalPagar);
+                    command.Parameters.AddWithValue("@cantidadPagada", cantidadPagada);
+                    command.Parameters.AddWithValue("@idProveedor", idProveedor);
+                    command.Parameters.AddWithValue("@idEmpleado", idEmpleado);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                    connection.Close();
+                }
+            }
+        }
+
         /*
          * Método para mostrar los proveedores en el combobox
          */

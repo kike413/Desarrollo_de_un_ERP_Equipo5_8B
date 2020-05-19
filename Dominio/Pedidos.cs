@@ -20,7 +20,12 @@ namespace Dominio
             tabla = pdao.Mostrar(pagina);
             return tabla;
         }
-
+        public void EditarPedido(string fechaRegistro, string fechaREcepcion, string totalPagar, string cantidadPagada,
+            int idProveedor, int idEmpleado, string id)
+        {
+            pdao.Editar(fechaRegistro, fechaREcepcion, Convert.ToSingle(totalPagar), Convert.ToSingle(cantidadPagada),
+                idProveedor, idEmpleado,Convert.ToInt32(id));
+        }
         public void ListarProveedores(ComboBox combo)
         {
             PedidosDAO oPed = new PedidosDAO();
