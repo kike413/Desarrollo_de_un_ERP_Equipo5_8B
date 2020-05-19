@@ -77,11 +77,11 @@
     <Compile Include="CategoriasGUI.Designer.cs">
       <DependentUpon>CategoriasGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="PedidosGui.cs">
+    <Compile Include="PedidoDetalleGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PedidosGui.Designer.cs">
-      <DependentUpon>PedidosGui.cs</DependentUpon>
+    <Compile Include="PedidoDetalleGUI.Designer.cs">
+      <DependentUpon>PedidoDetalleGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductosGUI.cs">
       <SubType>Form</SubType>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="NuevoColor.resx">
       <DependentUpon>NuevoColor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PedidosGui.resx">
-      <DependentUpon>PedidosGui.cs</DependentUpon>
+    <EmbeddedResource Include="PedidoDetalleGUI.resx">
+      <DependentUpon>PedidoDetalleGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalGUI.resx">
       <DependentUpon>PrincipalGUI.cs</DependentUpon>
