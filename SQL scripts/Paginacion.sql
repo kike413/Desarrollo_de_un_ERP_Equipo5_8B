@@ -118,4 +118,18 @@ rows fetch next 10 rows only
 go
 
 
+/**
+Paginación cuentasProveedor
+**/
+create function paginacion_cuentasProveedor (@pagina int)
+returns table
+as return
+select p.nombre as Proveedor, c.noCuenta, c.banco, c.estatus
+from CuentasProveedor c
+join Proveedores p
+on p.idProveedor=c.idProveedor
+where p.idProveedor = c.idProveedor
+order by p.idProveedor offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
 
