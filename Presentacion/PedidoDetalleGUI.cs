@@ -32,7 +32,7 @@ namespace Presentacion
         private void DetalleProductos_Load(object sender, EventArgs e)
         {
             MostrarPedidoDetalle();
-            numPags = PD.obtenerPaginas();
+            //numPags = PD.obtenerPaginas();
             Console.WriteLine("numero de paginas " + numPags);
         }
 

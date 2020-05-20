@@ -261,15 +261,17 @@ create proc EditarProductosProveedor
 @precioUltimaCompra float,
 @cantMinPedir int,
 @cantMaxPedir int,
-@id int
+@idProducto int,
+@idProveedor int
 as
-update ProductosProveedor set diasRetardo=@diasRetardo, precioEstandar=@precioEstandar , precioUltimaCompra=@precioUltimaCompra, cantMinPedir=@cantMinPedir, cantMaxPedir=@cantMaxPedir where idProducto=@id
+update ProductosProveedor set diasRetardo=@diasRetardo, precioEstandar=@precioEstandar , precioUltimaCompra=@precioUltimaCompra, cantMinPedir=@cantMinPedir, cantMaxPedir=@cantMaxPedir where idProducto=@idProveedor and idProveedor=@idProveedor
 go
 
 
 
 create proc EliminarProductosProveedor
-@id int
+@idProducto int,
+@idProveedor int
 as
-update ProductosProveedor set estatus='I' where idProducto=@id
+update ProductosProveedor set estatus='I' where idProducto=@idProducto and idProveedor=@idProveedor
 go

@@ -24,14 +24,14 @@ namespace Dominio
             PPDAO.Insertar(Convert.ToInt32(idProducto), Convert.ToInt32(idProveedor), Convert.ToInt32(diasRetardo), Convert.ToSingle(precioEstandar), Convert.ToSingle(precioUltimaCompra), Convert.ToInt32(cantMinPedir), Convert.ToInt32(cantMaxPedir));
         }
 
-        public void EditarProductosProveedor (string idProducto, string idProveedor, string diasRetardo, string precioEstandar, string precioUltimaCompra, string cantMinPedir, string cantMaxPedir, string id)
+        public void EditarProductosProveedor (string idProducto, string idProveedor, string diasRetardo, string precioEstandar, string precioUltimaCompra, string cantMinPedir, string cantMaxPedir)
         {
-            PPDAO.Editar(Convert.ToInt32(idProducto), Convert.ToInt32(idProveedor), Convert.ToInt32(diasRetardo), Convert.ToSingle(precioEstandar), Convert.ToSingle(precioUltimaCompra), Convert.ToInt32(cantMinPedir), cantMaxPedir, Convert.ToInt32(id));
+            PPDAO.Editar(Convert.ToInt32(idProducto), Convert.ToInt32(idProveedor), Convert.ToInt32(diasRetardo), Convert.ToSingle(precioEstandar), Convert.ToSingle(precioUltimaCompra), Convert.ToInt32(cantMinPedir), cantMaxPedir);
         }
 
-        public void EliminarProductosProveedor(string id)
+        public void EliminarProductosProveedor(string idProducto,string idProveedor)
         {
-            PPDAO.Eliminar(Convert.ToInt32(id));
+            PPDAO.Eliminar(Convert.ToInt32(idProducto),Convert.ToInt32(idProveedor));
         }
 
         public int obtenerPaginas()
