@@ -261,15 +261,44 @@ create proc EditarProductosProveedor
 @precioUltimaCompra float,
 @cantMinPedir int,
 @cantMaxPedir int,
-@id int
+@idProducto int,
+@idProveedor int
 as
-update ProductosProveedor set diasRetardo=@diasRetardo, precioEstandar=@precioEstandar , precioUltimaCompra=@precioUltimaCompra, cantMinPedir=@cantMinPedir, cantMaxPedir=@cantMaxPedir where idProducto=@id
+update ProductosProveedor set diasRetardo=@diasRetardo, precioEstandar=@precioEstandar , precioUltimaCompra=@precioUltimaCompra, cantMinPedir=@cantMinPedir, cantMaxPedir=@cantMaxPedir where idProducto=@idProducto and idProveedor=@idProveedor
 go
 
 
 
 create proc EliminarProductosProveedor
+@idProducto int,
+@idProveedor int
+as
+update ProductosProveedor set estatus='I' where idProducto=@idProducto and idProveedor=@idProveedor
+go
+
+/*
+	Procedimientos Cuentas Proveedor
+*/
+select * from CuentasProveedor
+
+create proc EditarCuentasProveedor
+@noCuenta varchar(10),
+@banco varchar(30),
 @id int
 as
-update ProductosProveedor set estatus='I' where idProducto=@id
+update CuentasProveedor set noCuenta=@noCuenta,banco=@banco where idProveedor=@id
 go
+
+
+/*procedimiento para mostrar en el COMBOBOX los proveedores*/
+create proc EliminarCuentaProveedor
+@idProveedor int,
+@noCuenta varchar(10),
+@banco varchar(30)
+as
+update CuentasProveedor set estatus='I' where idProveedor=@idProveedor and noCuenta=@noCuenta and banco=@banco
+go
+
+
+
+

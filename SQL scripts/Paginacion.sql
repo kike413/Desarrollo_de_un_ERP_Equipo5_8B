@@ -106,7 +106,7 @@ Paginación Productos Proveedor
 create function paginacion_productosProveedor (@pagina int)
 returns table
 as return
-select pv.idProveedor as Proveedor,pd.nombre as Producto, pp.diasRetardo, pp.precioEstandar, pp.precioUltimaCompra, pp.cantMinPedir, pp.cantMaxPedir
+select pd.idProducto as Productos, pv.idProveedor as Proveedor,pd.nombre as Producto, pp.diasRetardo, pp.precioEstandar, pp.precioUltimaCompra, pp.cantMinPedir, pp.cantMaxPedir
 from ProductosProveedor pp
 join Proveedores pv
 on pp.idProveedor=pv.idProveedor
@@ -114,6 +114,22 @@ join Productos pd
 on pp.idProducto=pd.idProducto
 where pp.idProveedor=pv.idProveedor and pp.idProducto=pd.idProducto and pp.estatus='A'
 order by pp.idProveedor offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
+
+
+/**
+Paginación cuentasProveedor
+**/
+create function paginacion_cuentasProveedor (@pagina int)
+returns table
+as return
+select p.nombre as Proveedor, c.noCuenta, c.banco, c.estatus
+from CuentasProveedor c
+join Proveedores p
+on p.idProveedor=c.idProveedor
+where p.idProveedor = c.idProveedor
+order by p.idProveedor offset (@pagina+-1)*10 
 rows fetch next 10 rows only
 go
 

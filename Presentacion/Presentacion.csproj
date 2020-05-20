@@ -53,6 +53,12 @@
     <Compile Include="ColoresGUI.Designer.cs">
       <DependentUpon>ColoresGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="CuentasProveedorGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CuentasProveedorGUI.Designer.cs">
+      <DependentUpon>CuentasProveedorGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetalleProductoGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="PedidoDetalleGUI.Designer.cs">
       <DependentUpon>PedidoDetalleGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosGui.Designer.cs">
+      <DependentUpon>PedidosGui.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductosGUI.cs">
       <SubType>Form</SubType>
@@ -113,6 +125,12 @@
     <Compile Include="PrincipalGUI.Designer.cs">
       <DependentUpon>PrincipalGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductosProveedorGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductosProveedorGUI.Designer.cs">
+      <DependentUpon>ProductosProveedorGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresGUI.cs">
@@ -126,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ColoresGUI.resx">
       <DependentUpon>ColoresGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CuentasProveedorGUI.resx">
+      <DependentUpon>CuentasProveedorGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetalleProductoGUI.resx">
       <DependentUpon>DetalleProductoGUI.cs</DependentUpon>
@@ -145,11 +166,17 @@
     <EmbeddedResource Include="PedidoDetalleGUI.resx">
       <DependentUpon>PedidoDetalleGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PedidosGui.resx">
+      <DependentUpon>PedidosGui.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrincipalGUI.resx">
       <DependentUpon>PrincipalGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductosGUI.resx">
       <DependentUpon>ProductosGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductosProveedorGUI.resx">
+      <DependentUpon>ProductosProveedorGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
