@@ -57,7 +57,7 @@ namespace Datos
         /*
          * Editar
          */
-        public void Editar(int idProducto, int idProveedor, int diasRetardo, float precioEstandar, float precioUltimaCompra, int cantMinPedir, string cantMaxPedir, int id)
+        public void Editar(int idProducto, int idProveedor, int diasRetardo, float precioEstandar, float precioUltimaCompra, int cantMinPedir, string cantMaxPedir)
         {
             using (var connection = GetConnection())
             {
@@ -74,7 +74,6 @@ namespace Datos
                     command.Parameters.AddWithValue("@precioUltimaCompra", precioUltimaCompra);
                     command.Parameters.AddWithValue("@cantMinPedir", cantMinPedir);
                     command.Parameters.AddWithValue("@cantMaxPedir", cantMaxPedir);
-                    command.Parameters.AddWithValue("@id", id);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
                     connection.Close();
@@ -86,7 +85,7 @@ namespace Datos
          * Eliminar
          */
 
-        public void Eliminar(int id)
+        public void Eliminar(int idProducto,int idProveedor)
         {
             using (var connection = GetConnection())
             {
@@ -96,7 +95,8 @@ namespace Datos
                     command.Connection = connection;
                     command.CommandText = "EliminarProductosProveedor";
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@idProducto", idProducto);
+                    command.Parameters.AddWithValue("@idProveedor", idProveedor);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
                     connection.Close();

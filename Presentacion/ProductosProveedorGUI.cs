@@ -16,6 +16,7 @@ namespace Presentacion
         ProductosProveedor PP = new ProductosProveedor();
         //variable para recuperar el id del estilo seleccionado
         private string idProducto = null;
+        private string idProveedor = null;
         //variable para saber cuando se va a editar.
         private bool editar = false;
         private int pag = 1;
@@ -217,7 +218,7 @@ namespace Presentacion
             {
                 try
                 {
-                    PP.EditarProductosProveedor(txtidProducto.Text, txtidProveedor.Text, txtDiasRetardo.Text, txtPrecioEstandar.Text, txtPrecioUCompra.Text, txtCantMinima.Text, txtCantMaxima.Text, idProducto);
+                    PP.EditarProductosProveedor(txtidProducto.Text, txtidProveedor.Text, txtDiasRetardo.Text, txtPrecioEstandar.Text, txtPrecioUCompra.Text, txtCantMinima.Text, txtCantMaxima.Text);
                     MessageBox.Show("Se insertó correctamente");
                     MostrarProductosProveedor();
                     editar = false;
@@ -241,8 +242,9 @@ namespace Presentacion
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                idProducto = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
-                PP.EliminarProductosProveedor(idProducto);
+                idProducto = dataGridView1.CurrentRow.Cells["Productos"].Value.ToString();
+                idProveedor = dataGridView1.CurrentRow.Cells["Proveedor"].Value.ToString();
+                PP.EliminarProductosProveedor(idProducto,idProveedor);
                 MessageBox.Show("Eliminado correctamente.");
                 MostrarProductosProveedor();
             }
@@ -255,16 +257,18 @@ namespace Presentacion
             //si hay mas de una columna entonces...
             if (dataGridView1.SelectedRows.Count > 0)
             {
+                txtidProducto.Enabled = false;
+                txtidProveedor.Enabled = false;
                 editar = true;
                 //entre corchetes el nombre del campo como está en la base de datos
-                /**txtidProducto.Text = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
-                txtidProveedor.Text = dataGridView1.CurrentRow.Cells["idProveedor"].Value.ToString();**/
+                txtidProducto.Text = dataGridView1.CurrentRow.Cells["Productos"].Value.ToString();
+                txtidProveedor.Text = dataGridView1.CurrentRow.Cells["Proveedor"].Value.ToString();
                 txtDiasRetardo.Text = dataGridView1.CurrentRow.Cells["diasRetardo"].Value.ToString();
                 txtPrecioEstandar.Text = dataGridView1.CurrentRow.Cells["precioEstandar"].Value.ToString();
                 txtPrecioUCompra.Text = dataGridView1.CurrentRow.Cells["precioUltimaCompra"].Value.ToString();
                 txtCantMinima.Text = dataGridView1.CurrentRow.Cells["cantMinPedir"].Value.ToString();
                 txtCantMaxima.Text = dataGridView1.CurrentRow.Cells["cantMaxPedir"].Value.ToString();
-                idProducto = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
+                //idProducto = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
             }
             else
                 MessageBox.Show("Seleccione el producto del proveedor que quiere editar.");

@@ -117,3 +117,5 @@ order by pp.idProveedor offset (@pagina+-1)*10
 rows fetch next 10 rows only
 go
 
+
+
