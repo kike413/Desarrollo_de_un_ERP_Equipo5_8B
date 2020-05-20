@@ -18,8 +18,3 @@ C:\Users\DELL\Desktop\TEC\8 Semestre\Zinzun\Nueva carpeta\Desarrollo_de_un_ERP_E
 C:\Users\DELL\Desktop\TEC\8 Semestre\Zinzun\Nueva carpeta\Desarrollo_de_un_ERP_Equipo5_8B-master\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
 C:\Users\DELL\Desktop\TEC\8 Semestre\Zinzun\Nueva carpeta\Desarrollo_de_un_ERP_Equipo5_8B-master\Datos\obj\Debug\Datos.dll
 C:\Users\DELL\Desktop\TEC\8 Semestre\Zinzun\Nueva carpeta\Desarrollo_de_un_ERP_Equipo5_8B-master\Datos\obj\Debug\Datos.pdb
-C:\Users\jvega\Documents\GitHub\Desarrollo_de_un_ERP_Equipo5_8B\Datos\bin\Debug\Datos.dll
-C:\Users\jvega\Documents\GitHub\Desarrollo_de_un_ERP_Equipo5_8B\Datos\bin\Debug\Datos.pdb
-C:\Users\jvega\Documents\GitHub\Desarrollo_de_un_ERP_Equipo5_8B\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
-C:\Users\jvega\Documents\GitHub\Desarrollo_de_un_ERP_Equipo5_8B\Datos\obj\Debug\Datos.dll
-C:\Users\jvega\Documents\GitHub\Desarrollo_de_un_ERP_Equipo5_8B\Datos\obj\Debug\Datos.pdb
