@@ -19,25 +19,36 @@ namespace Dominio
             return tabla;
         }
 
-        public void InsertarProductosProveedor(string idProducto, string idProveedor, string diasRetardo, string precioEstandar, string precioUltimaCompra, string cantMinPedir, string cantMaxPedir)
+        public void InsertarProductosProveedor(string diasRetardo, string precioEstandar, string precioUltimaCompra, string cantMinPedir, string cantMaxPedir)
         {//Convert.ToString()
-            PPDAO.Insertar(Convert.ToInt32(idProducto), Convert.ToInt32(idProveedor), Convert.ToInt32(diasRetardo), Convert.ToSingle(precioEstandar), Convert.ToSingle(precioUltimaCompra), Convert.ToInt32(cantMinPedir), Convert.ToInt32(cantMaxPedir));
+            PPDAO.Insertar(Convert.ToInt32(diasRetardo), Convert.ToSingle(precioEstandar), Convert.ToSingle(precioUltimaCompra), Convert.ToInt32(cantMinPedir), Convert.ToInt32(cantMaxPedir));
         }
 
-        public void EditarProductosProveedor (string idProducto, string idProveedor, string diasRetardo, string precioEstandar, string precioUltimaCompra, string cantMinPedir, string cantMaxPedir)
+        public void EditarProductosProveedor (string diasRetardo, string precioEstandar, string precioUltimaCompra, string cantMinPedir, string cantMaxPedir, string id)
         {
-            PPDAO.Editar(Convert.ToInt32(idProducto), Convert.ToInt32(idProveedor), Convert.ToInt32(diasRetardo), Convert.ToSingle(precioEstandar), Convert.ToSingle(precioUltimaCompra), Convert.ToInt32(cantMinPedir), cantMaxPedir);
+            PPDAO.Editar(Convert.ToInt32(diasRetardo), Convert.ToSingle(precioEstandar), Convert.ToSingle(precioUltimaCompra), Convert.ToInt32(cantMinPedir), cantMaxPedir, Convert.ToInt32(id));
         }
 
-        public void EliminarProductosProveedor(string idProducto,string idProveedor)
+        public void EliminarProductosProveedor(string id)
         {
-            PPDAO.Eliminar(Convert.ToInt32(idProducto),Convert.ToInt32(idProveedor));
+            PPDAO.Eliminar(Convert.ToInt32(id));
         }
 
         public int obtenerPaginas()
         {
             int pags = PPDAO.obtenerPaginas();
             return pags;
+        }
+        /**public int obtenerIdColor(string campo)
+        {
+            int ids = DPDAO.obtenerIdColor(campo);
+            return ids;
+        }**/
+
+        public int obtenerIdProducto(string campo)
+        {
+            int ids = PPDAO.obtenerIdProducto(campo);
+            return ids;
         }
     }
 }
