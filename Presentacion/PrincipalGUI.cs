@@ -102,5 +102,12 @@ namespace Presentacion
             pedidos.Show();
             this.Hide();
         }
+
+        private void btnCuentas_Click(object sender, EventArgs e)
+        {
+            CuentasProveedorGUI cuentas = new CuentasProveedorGUI();
+            cuentas.Show();
+            this.Hide();
+        }
     }
 }

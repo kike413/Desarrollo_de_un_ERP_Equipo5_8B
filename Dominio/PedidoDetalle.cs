@@ -19,19 +19,21 @@ namespace Dominio
             return tabla;
         }
 
-        public void InsertarPedidoDetalle(string idProducto, string idProductoDetalle, string cantPedida, string precioUnitario,string suntotal,string cantRecibida, string cantRechazada, string cantAceptada)
+        public void InsertarPedidoDetalle(string cantPedida, string precioUnitario,string suntotal,string cantResivida, string cantRechesada, string cantAceptada)
         {//Convert.ToString()
-            PedidoD.Insertar(Convert.ToInt32(idProducto), Convert.ToInt32(idProductoDetalle), Convert.ToInt32(cantPedida), Convert.ToSingle(precioUnitario), Convert.ToSingle(suntotal), Convert.ToInt32(cantRecibida),Convert.ToInt32(cantRechazada), Convert.ToSingle(cantAceptada));
+            PedidoD.Insertar(Convert.ToInt32(cantPedida), Convert.ToSingle(precioUnitario), Convert.ToSingle(suntotal), Convert.ToInt32(cantResivida),Convert.ToInt32(cantRechesada), Convert.ToSingle(cantAceptada));
         }
 
-        public void EditarPedidoDetalle(string idProducto, string idProductoDetalle, string cantPedida, string precioUnitario, string suntotal, string cantRecibida, string cantRechazada, string cantAceptada)
+        public void EditarPedidoDetalle(string cantPedida, string precioUnitario, string suntotal, string cantResivida, string cantRechesada, string cantAceptada,
+            string id)
         {
-            PedidoD.Editar(Convert.ToInt32(idProducto), Convert.ToInt32(idProductoDetalle), Convert.ToInt32(cantPedida), Convert.ToSingle(precioUnitario), Convert.ToSingle(suntotal), Convert.ToInt32(cantRecibida), Convert.ToInt32(cantRechazada), Convert.ToSingle(cantAceptada));
+            PedidoD.Editar(Convert.ToInt32(cantPedida), Convert.ToSingle(precioUnitario), Convert.ToSingle(suntotal), Convert.ToInt32(cantResivida), Convert.ToInt32(cantRechesada), Convert.ToSingle(cantAceptada), 
+                Convert.ToInt32(id));
         }
 
-        public void EliminarPedidoDetalle(string idProducto, string idProductoDetalle)
+        public void EliminarPedidoDetalle(string id)
         {
-            PedidoD.Eliminar(Convert.ToInt32(idProducto), Convert.ToInt32(idProductoDetalle));
+            PedidoD.Eliminar(Convert.ToInt32(id));
         }
 
         public int obtenerPaginas()

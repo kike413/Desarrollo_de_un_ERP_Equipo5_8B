@@ -37,7 +37,7 @@ namespace Datos
         /*
         * insertar
         */
-        public void Insertar(int idPedido, int idProductoDetalle, int cantPedida, float precioUnitario, float subtotal,int cantResibida, int cantRechazada, float cantAceptada)
+        public void Insertar(int cantPedida, float precioUnitario, float subtotal,int cantResibida, int cantRechazada, float cantAceptada)
         {
             using (var connection = GetConnection())
             {
@@ -45,7 +45,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "insert into PedidoDetalle values (" + idPedido + "," + idProductoDetalle + "," + cantPedida + "," + precioUnitario + "," + subtotal +","+cantResibida+","+cantRechazada+","+cantAceptada+ ", default)";
+                    command.CommandText = "insert into PedidoDetalle values (" + cantPedida +"," + precioUnitario +","+subtotal+","+cantResibida+","+cantRechazada+","+cantAceptada+ ", default)";
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
@@ -57,7 +57,7 @@ namespace Datos
         /*
          * Editar
          */
-        public void Editar(int idPedido, int idProductoDetalle, int cantPedida, float precioUnitario, float subtotal, int cantRecibida, int cantRechazada, float cantAceptada)
+        public void Editar(int cantPedida, float precioUnitario, float subtotal, int cantResibida, int cantRechazada, float cantAceptada, int id)
         {
             using (var connection = GetConnection())
             {
@@ -67,14 +67,13 @@ namespace Datos
                     command.Connection = connection;
                     command.CommandText = "EditarPedidoDetalle";
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idPedido", idPedido);
-                    command.Parameters.AddWithValue("@idProductoDetalle", idProductoDetalle);
                     command.Parameters.AddWithValue("@cantPedida", cantPedida);
                     command.Parameters.AddWithValue("@precioUnitario", precioUnitario);
                     command.Parameters.AddWithValue("@subtotal", subtotal);
-                    command.Parameters.AddWithValue("@cantRecibida", cantRecibida);
+                    command.Parameters.AddWithValue("@cantResibida", cantResibida);
                     command.Parameters.AddWithValue("@cantRechazada", cantRechazada);
                     command.Parameters.AddWithValue("@cantAceptada", cantAceptada);
+                    command.Parameters.AddWithValue("@id", id);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
                     connection.Close();
@@ -86,7 +85,7 @@ namespace Datos
          * Eliminar
          */
 
-        public void Eliminar(int idPedido, int idProductoDetalle)
+        public void Eliminar(int id)
         {
             using (var connection = GetConnection())
             {
@@ -96,8 +95,7 @@ namespace Datos
                     command.Connection = connection;
                     command.CommandText = "EliminarPedidoDetalle";
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@idPedido", idPedido);
-                    command.Parameters.AddWithValue("@idProductoDetalle", idProductoDetalle);
+                    command.Parameters.AddWithValue("@id", id);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
                     connection.Close();

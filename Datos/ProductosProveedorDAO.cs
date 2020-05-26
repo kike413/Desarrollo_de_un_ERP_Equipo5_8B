@@ -37,7 +37,7 @@ namespace Datos
         /*
         * insertar
         */
-        public void Insertar(int diasRetardo, float precioEstandar, float precioUltimaCompra, int cantMinPedir, int cantMaxPedir)
+        public void Insertar(int idProducto, int idProveedor, int diasRetardo, float precioEstandar, float precioUltimaCompra, int cantMinPedir, int cantMaxPedir)
         {
             using (var connection = GetConnection())
             {
@@ -45,7 +45,7 @@ namespace Datos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "insert into ProductosProveedor values (" + diasRetardo + "," + precioEstandar + "," + precioUltimaCompra + "," + cantMinPedir + "," + cantMaxPedir + ", default)";
+                    command.CommandText = "insert into ProductosProveedor values (" + idProducto + "," + idProveedor + "," + diasRetardo + "," + precioEstandar + "," + precioUltimaCompra + "," + cantMinPedir + "," + cantMaxPedir + ", default)";
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
@@ -57,7 +57,7 @@ namespace Datos
         /*
          * Editar
          */
-        public void Editar(int diasRetardo, float precioEstandar, float precioUltimaCompra, int cantMinPedir, string cantMaxPedir, int id)
+        public void Editar(int idProducto, int idProveedor, int diasRetardo, float precioEstandar, float precioUltimaCompra, int cantMinPedir, string cantMaxPedir)
         {
             using (var connection = GetConnection())
             {
@@ -67,12 +67,13 @@ namespace Datos
                     command.Connection = connection;
                     command.CommandText = "EditarProductosProveedor";
                     command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@idProducto", idProducto);
+                    command.Parameters.AddWithValue("@idProveedor", idProveedor);
                     command.Parameters.AddWithValue("@diasRetardo", diasRetardo);
                     command.Parameters.AddWithValue("@precioEstandar", precioEstandar);
                     command.Parameters.AddWithValue("@precioUltimaCompra", precioUltimaCompra);
                     command.Parameters.AddWithValue("@cantMinPedir", cantMinPedir);
                     command.Parameters.AddWithValue("@cantMaxPedir", cantMaxPedir);
-                    command.Parameters.AddWithValue("@id", id);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
                     connection.Close();
@@ -84,7 +85,7 @@ namespace Datos
          * Eliminar
          */
 
-        public void Eliminar(int id)
+        public void Eliminar(int idProducto,int idProveedor)
         {
             using (var connection = GetConnection())
             {
@@ -94,7 +95,8 @@ namespace Datos
                     command.Connection = connection;
                     command.CommandText = "EliminarProductosProveedor";
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@idProducto", idProducto);
+                    command.Parameters.AddWithValue("@idProveedor", idProveedor);
                     command.ExecuteNonQuery();
                     command.Parameters.Clear();
                     connection.Close();
@@ -121,26 +123,6 @@ namespace Datos
 
         }
 
-        /**public int obtenerIdColor(string campo)
-        {
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.CommandText = "select d.idcolor from detalleproductos d " +
-                        "join colores c " +
-                        "on c.idcolor=d.idcolor " +
-                        "where c.nombre = '" + campo + "'";
-                    command.CommandType = CommandType.Text;
-                    id = Convert.ToInt32(command.ExecuteScalar());
-                    Console.WriteLine("paginas " + pagina);
-                    connection.Close();
-                    return id;
-                }
-            }
-        }**/
 
         public int obtenerIdProducto(string campo)
         {

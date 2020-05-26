@@ -15,14 +15,13 @@ namespace Presentacion
     {
         ProductosProveedor PP = new ProductosProveedor();
         //variable para recuperar el id del estilo seleccionado
-        private string idProductoProvedor = null;
+        private string idProducto = null;
+        private string idProveedor = null;
         //variable para saber cuando se va a editar.
         private bool editar = false;
-        private string CExistencia;
         private int pag = 1;
         private int numPags = 0;
         private int auxiliar = 0;
-        private string campo = "";
 
         public ProductosProveedorGUI()
         {
@@ -75,6 +74,8 @@ namespace Presentacion
 
         private void limpiar()
         {
+            txtidProducto.Clear();
+            txtidProveedor.Clear();
             txtDiasRetardo.Clear();
             txtPrecioEstandar.Clear();
             txtPrecioUCompra.Clear();
@@ -191,7 +192,7 @@ namespace Presentacion
             borrarError();
             ValidarCampos();
             //insertar registros si no se ha elegido editar
-            if (txtDiasRetardo.Text == "" || txtPrecioEstandar.Text == "" || txtPrecioUCompra.Text == "" || txtCantMinima.Text == "" || txtCantMaxima.Text == "")
+            if (txtidProducto.Text == "" || txtidProveedor.Text == "" || txtDiasRetardo.Text == "" || txtPrecioEstandar.Text == "" || txtPrecioUCompra.Text == "" || txtCantMinima.Text == "" || txtCantMaxima.Text == "")
             {
             }
             else if (editar == false)
@@ -199,7 +200,7 @@ namespace Presentacion
                 try
                 {
 
-                    PP.InsertarProductosProveedor(txtDiasRetardo.Text, txtPrecioEstandar.Text, txtPrecioUCompra.Text, txtCantMinima.Text, txtCantMaxima.Text);
+                    PP.InsertarProductosProveedor(txtidProducto.Text, txtidProveedor.Text, txtDiasRetardo.Text, txtPrecioEstandar.Text, txtPrecioUCompra.Text, txtCantMinima.Text, txtCantMaxima.Text);
                     MessageBox.Show("Se insertó correctamente");
                     MostrarProductosProveedor();
                     limpiar();
@@ -210,14 +211,14 @@ namespace Presentacion
                 }
             }
             //si editar = true entonces editamos xd
-            if (txtDiasRetardo.Text == "" || txtPrecioEstandar.Text == "" || txtPrecioUCompra.Text == "" || txtCantMinima.Text == "" || txtCantMaxima.Text == "")
+            if (txtidProducto.Text == "" || txtidProveedor.Text == "" || txtDiasRetardo.Text == "" || txtPrecioEstandar.Text == "" || txtPrecioUCompra.Text == "" || txtCantMinima.Text == "" || txtCantMaxima.Text == "")
             {
             }
             else if (editar == true)
             {
                 try
                 {
-                    PP.EditarProductosProveedor(txtDiasRetardo.Text, txtPrecioEstandar.Text, txtPrecioUCompra.Text, txtCantMinima.Text, txtCantMaxima.Text, idProductoProvedor);
+                    PP.EditarProductosProveedor(txtidProducto.Text, txtidProveedor.Text, txtDiasRetardo.Text, txtPrecioEstandar.Text, txtPrecioUCompra.Text, txtCantMinima.Text, txtCantMaxima.Text);
                     MessageBox.Show("Se insertó correctamente");
                     MostrarProductosProveedor();
                     editar = false;
@@ -241,8 +242,9 @@ namespace Presentacion
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                idProductoProvedor = dataGridView1.CurrentRow.Cells["idProductoDetalle"].Value.ToString();
-                PP.EliminarProductosProveedor(idProductoProvedor);
+                idProducto = dataGridView1.CurrentRow.Cells["Productos"].Value.ToString();
+                idProveedor = dataGridView1.CurrentRow.Cells["Proveedor"].Value.ToString();
+                PP.EliminarProductosProveedor(idProducto,idProveedor);
                 MessageBox.Show("Eliminado correctamente.");
                 MostrarProductosProveedor();
             }
@@ -255,14 +257,18 @@ namespace Presentacion
             //si hay mas de una columna entonces...
             if (dataGridView1.SelectedRows.Count > 0)
             {
+                txtidProducto.Enabled = false;
+                txtidProveedor.Enabled = false;
                 editar = true;
                 //entre corchetes el nombre del campo como está en la base de datos
+                txtidProducto.Text = dataGridView1.CurrentRow.Cells["Productos"].Value.ToString();
+                txtidProveedor.Text = dataGridView1.CurrentRow.Cells["Proveedor"].Value.ToString();
                 txtDiasRetardo.Text = dataGridView1.CurrentRow.Cells["diasRetardo"].Value.ToString();
                 txtPrecioEstandar.Text = dataGridView1.CurrentRow.Cells["precioEstandar"].Value.ToString();
                 txtPrecioUCompra.Text = dataGridView1.CurrentRow.Cells["precioUltimaCompra"].Value.ToString();
                 txtCantMinima.Text = dataGridView1.CurrentRow.Cells["cantMinPedir"].Value.ToString();
                 txtCantMaxima.Text = dataGridView1.CurrentRow.Cells["cantMaxPedir"].Value.ToString();
-                idProductoProvedor = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
+                //idProducto = dataGridView1.CurrentRow.Cells["idProducto"].Value.ToString();
             }
             else
                 MessageBox.Show("Seleccione el producto del proveedor que quiere editar.");
