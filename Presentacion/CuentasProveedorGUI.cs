@@ -36,7 +36,6 @@ namespace Presentacion
             Console.WriteLine("numero de paginas " + numPags);
             ListarProveedores();
             comboProveedor.ResetText();
-            txtnoCuenta.MaxLength=10;
         }
         public void MostrarCuentas()
         {
@@ -150,8 +149,8 @@ namespace Presentacion
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             {
-                borrarError();
-                ValidarCampos();
+                //borrarError();
+                //ValidarCampos();
                 //insertar registros si no se ha elegido editar
                 if (comboProveedor.Text == "" || txtnoCuenta.Text == "" || txtBanco.Text == "")
                 {
@@ -163,8 +162,7 @@ namespace Presentacion
                         cN.insertarCuenta(Convert.ToInt32(comboProveedor.SelectedValue), txtnoCuenta.Text, txtBanco.Text);
                         MessageBox.Show("Se insertó correctamente");
                         MostrarCuentas();
-                        limpiar();
-                        
+                        //limpiar();
                     }
                     catch (Exception ex)
                     {
@@ -184,76 +182,13 @@ namespace Presentacion
                         MessageBox.Show("Se editó correctamente");
                         MostrarCuentas();
                         editar = false;
-                        limpiar();
+                        //limpiar();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("No se pudo editar el registro. Error: " + ex);
                     }
                 }
-            }
-        }
-
-        private bool ValidarCampos()
-        {
-            bool ok = true;
-            if (txtnoCuenta.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtnoCuenta, "Debe escribir número de cuenta");
-            }
-            else if (txtBanco.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtBanco, "Debe escribir el nombre de un banco");
-            }
-            else if (comboProveedor.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(comboProveedor, "Debe elegir un proveedor.");
-            }
-            return ok;
-        }
-
-        private void borrarError()
-        {
-            errorProvider1.SetError(comboProveedor, "");
-            errorProvider1.SetError(txtnoCuenta, "");
-            errorProvider1.SetError(txtBanco, "");
-
-        }
-
-        /**
-        * Método para limpiar los campos después de editar o insertar
-        * 
-        */
-
-        private void limpiar()
-        {
-            txtnoCuenta.Clear();
-            txtBanco.Clear();
-            comboProveedor.ResetText();
-        }
-
-        private void txtnoCuenta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 47 || (e.KeyChar >= 58 && e.KeyChar <= 255)))
-            {
-                MessageBox.Show("Solo se admiten números enteros", "Advertencia", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtBanco_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64 || (e.KeyChar >= 91 && e.KeyChar <= 96)))
-            {
-                MessageBox.Show("Solo se admiten letras", "Advertencia", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
             }
         }
     }

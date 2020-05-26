@@ -301,39 +301,4 @@ go
 
 
 
-/*
-	Procedimientos Pedido detalle
-*/
-select * from CuentasProveedor
-
-create proc EditarPedidoDetalle
-@cantPedida int,
-@precioUnitario float,
-@subtotal float,
-@cantRecibida int,
-@cantRechazada int,
-@cantAceptada int,
-@idPedido int,
-@idProductoDetalle int
-as
-update PedidoDetalle set cantPedida=@cantPedida,precioUnitario=@precioUnitario,subtotal=@subtotal,cantRecibida=@cantRecibida,cantRechazada=@cantRechazada,
-cantAceptada=@cantAceptada
-where idPedido=@idPedido and idProductoDetalle=@idProductoDetalle
-go
-
-
-/*procedimiento para mostrar en el COMBOBOX los proveedores*/
-
-create proc EliminarPedidoDetalle
-@idPedido int,
-@idProductoDetalle int
-as
-update PedidoDetalle set estatus='I' where idPedido=@idPedido and idProductoDetalle=@idProductoDetalle
-go
-
-select * from PedidoDetalle
-
-
-
-
 

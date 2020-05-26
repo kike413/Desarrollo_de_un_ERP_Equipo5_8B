@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,10 +53,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.fecha = new System.Windows.Forms.Label();
             this.Regresar = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // avanza
@@ -271,7 +268,6 @@
             this.txtCantidadPagada.Name = "txtCantidadPagada";
             this.txtCantidadPagada.Size = new System.Drawing.Size(138, 20);
             this.txtCantidadPagada.TabIndex = 14;
-            this.txtCantidadPagada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadPagada_KeyPress_1);
             // 
             // label5
             // 
@@ -290,7 +286,6 @@
             this.txtTotalPagar.Name = "txtTotalPagar";
             this.txtTotalPagar.Size = new System.Drawing.Size(138, 20);
             this.txtTotalPagar.TabIndex = 12;
-            this.txtTotalPagar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalPagar_KeyPress_1);
             // 
             // label3
             // 
@@ -358,10 +353,6 @@
             this.Regresar.UseVisualStyleBackColor = false;
             this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // PedidosGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,7 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,6 +402,5 @@
         private System.Windows.Forms.DateTimePicker dateRegistro;
         private System.Windows.Forms.DateTimePicker dateRecepcion;
         private System.Windows.Forms.Button Regresar;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
