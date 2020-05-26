@@ -1,5 +1,4 @@
-﻿using Datos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,7 +40,6 @@ namespace Presentacion
             ListarEmpleados();
             comboEmpleado.ResetText();
             comboProveedor.ResetText();
-            Console.WriteLine("`prueba");
         }
 
         public void MostrarPedidos()
@@ -100,10 +98,10 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            borrarError();
-            ValidarCampos();
+            //borrarError();
+            //ValidarCampos();
             //insertar registros si no se ha elegido editar
-            if (txtTotalPagar.Text == "" || txtCantidadPagada.Text == "" || comboProveedor.Text == "" || comboEmpleado.Text == "")
+            if (dateRegistro.Text == "" || dateRecepcion.Text == "" || txtTotalPagar.Text == "" || txtCantidadPagada.Text == "" || comboProveedor.Text == "" || comboEmpleado.Text == "")
             {
             }
             else if (editar == false)
@@ -113,7 +111,7 @@ namespace Presentacion
                     pedN.insertarPedido(Convert.ToString(dateRegistro.Value), Convert.ToString(dateRecepcion.Value), txtTotalPagar.Text, txtCantidadPagada.Text, Convert.ToInt32(comboProveedor.SelectedValue), Convert.ToInt32(comboEmpleado.SelectedValue));
                     MessageBox.Show("Se insertó correctamente");
                     MostrarPedidos();
-                    limpiar();
+                    //limpiar();
                 }
                 catch (Exception ex)
                 {
@@ -121,7 +119,7 @@ namespace Presentacion
                 }
             }
             //si editar = true entonces editamos xd
-            if (txtTotalPagar.Text == "" || txtCantidadPagada.Text == "" || comboProveedor.Text == "" || comboEmpleado.Text == "")
+            if (dateRegistro.Text == "" || dateRecepcion.Text == "" || txtTotalPagar.Text == "" || txtCantidadPagada.Text == "" || comboProveedor.Text == "" || comboEmpleado.Text == "")
             {
             }
             else if (editar == true)
@@ -133,7 +131,7 @@ namespace Presentacion
                     MessageBox.Show("Se editó correctamente");
                     MostrarPedidos();
                     editar = false;
-                    limpiar();
+                    //limpiar();
                 }
                 catch (Exception ex)
                 {
@@ -210,88 +208,12 @@ namespace Presentacion
             }
         }
 
-        private bool ValidarCampos()
+
+        private void btnPedidoDetalle_Click(object sender, EventArgs e)
         {
-            bool ok = true;
-            if (txtTotalPagar.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtTotalPagar, "Debe elegir una fecha de recepción");
-            }
-            else if (txtCantidadPagada.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtCantidadPagada, "Debe elegir una fecha de recepción");
-            }
-            else if (dateRegistro.Text == " ")
-            {
-                ok = false;
-                errorProvider1.SetError(dateRegistro, "Debe elegir una fecha de registro");
-            }
-            else if (dateRecepcion.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(dateRecepcion, "Debe elegir una fecha de recepción");
-            }
-            else if (comboProveedor.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(comboProveedor, "Debe elegir un proveedor.");
-            }
-            else if (comboEmpleado.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(comboEmpleado, "Debe elegir un empleado.");
-            }
-            return ok;
-        }
-
-        private void borrarError()
-        {
-            errorProvider1.SetError(dateRegistro, "");
-            errorProvider1.SetError(dateRecepcion, "");
-            errorProvider1.SetError(txtTotalPagar, "");
-            errorProvider1.SetError(txtCantidadPagada, "");
-            errorProvider1.SetError(comboProveedor, "");
-            errorProvider1.SetError(comboEmpleado, "");
-        }
-
-            /**
-            * Método para limpiar los campos después de editar o insertar
-            * 
-            */
-
-        private void limpiar()
-        {
-            dateRegistro.ResetText();
-            dateRecepcion.ResetText();
-            txtTotalPagar.Clear();
-            txtCantidadPagada.Clear();
-            comboProveedor.ResetText();
-            comboEmpleado.ResetText();
-
-        }
-
-        private void txtTotalPagar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64 || (e.KeyChar >= 91 && e.KeyChar <= 96)))
-            {
-                MessageBox.Show("Solo se admiten letras", "Advertencia", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtCantidadPagada_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 45 || (e.KeyChar == 47) || (e.KeyChar >= 58 && e.KeyChar <= 255)))
-            {
-                MessageBox.Show("Solo se admiten números enteros o con decimal", "Advertencia", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
+            PedidoDetalleGUI pdgui = new PedidoDetalleGUI();
+            pdgui.Show();
+            this.Hide();
         }
     }
     }

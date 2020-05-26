@@ -37,6 +37,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCantAceptada = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCantRechazada = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCantResibida = new System.Windows.Forms.TextBox();
@@ -50,11 +54,11 @@
             this.Talla = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.txtCantRechazada = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtCantAceptada = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtidProductoDetalle = new System.Windows.Forms.TextBox();
+            this.txtidPedido = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -74,6 +78,7 @@
             this.avanza.TabIndex = 36;
             this.avanza.Text = ">";
             this.avanza.UseVisualStyleBackColor = false;
+            this.avanza.Click += new System.EventHandler(this.avanza_Click);
             // 
             // retroceder
             // 
@@ -89,6 +94,7 @@
             this.retroceder.TabIndex = 35;
             this.retroceder.Text = "<";
             this.retroceder.UseVisualStyleBackColor = false;
+            this.retroceder.Click += new System.EventHandler(this.retroceder_Click);
             // 
             // label1
             // 
@@ -144,6 +150,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
+            this.panel1.Controls.Add(this.txtidProductoDetalle);
+            this.panel1.Controls.Add(this.txtidPedido);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtCantAceptada);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtCantRechazada);
@@ -162,12 +172,48 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(564, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 341);
+            this.panel1.Size = new System.Drawing.Size(272, 402);
             this.panel1.TabIndex = 37;
+            // 
+            // txtCantAceptada
+            // 
+            this.txtCantAceptada.Location = new System.Drawing.Point(122, 304);
+            this.txtCantAceptada.Name = "txtCantAceptada";
+            this.txtCantAceptada.Size = new System.Drawing.Size(138, 20);
+            this.txtCantAceptada.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(7, 308);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 16);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Cantidad Aceptada:";
+            // 
+            // txtCantRechazada
+            // 
+            this.txtCantRechazada.Location = new System.Drawing.Point(122, 270);
+            this.txtCantRechazada.Name = "txtCantRechazada";
+            this.txtCantRechazada.Size = new System.Drawing.Size(138, 20);
+            this.txtCantRechazada.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(7, 274);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 16);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Cantidad Rechazada:";
             // 
             // txtSubtotal
             // 
-            this.txtSubtotal.Location = new System.Drawing.Point(118, 131);
+            this.txtSubtotal.Location = new System.Drawing.Point(122, 195);
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(138, 20);
             this.txtSubtotal.TabIndex = 28;
@@ -177,7 +223,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 135);
+            this.label4.Location = new System.Drawing.Point(7, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 16);
             this.label4.TabIndex = 27;
@@ -185,7 +231,7 @@
             // 
             // txtCantResibida
             // 
-            this.txtCantResibida.Location = new System.Drawing.Point(118, 169);
+            this.txtCantResibida.Location = new System.Drawing.Point(122, 233);
             this.txtCantResibida.Name = "txtCantResibida";
             this.txtCantResibida.Size = new System.Drawing.Size(138, 20);
             this.txtCantResibida.TabIndex = 26;
@@ -195,7 +241,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 173);
+            this.label3.Location = new System.Drawing.Point(7, 237);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 16);
             this.label3.TabIndex = 25;
@@ -203,14 +249,14 @@
             // 
             // txtPrecioU
             // 
-            this.txtPrecioU.Location = new System.Drawing.Point(118, 96);
+            this.txtPrecioU.Location = new System.Drawing.Point(122, 160);
             this.txtPrecioU.Name = "txtPrecioU";
             this.txtPrecioU.Size = new System.Drawing.Size(138, 20);
             this.txtPrecioU.TabIndex = 24;
             // 
             // txtCantPedida
             // 
-            this.txtCantPedida.Location = new System.Drawing.Point(118, 60);
+            this.txtCantPedida.Location = new System.Drawing.Point(122, 124);
             this.txtCantPedida.Name = "txtCantPedida";
             this.txtCantPedida.Size = new System.Drawing.Size(138, 20);
             this.txtCantPedida.TabIndex = 23;
@@ -220,7 +266,7 @@
             this.Existencia.AutoSize = true;
             this.Existencia.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Existencia.ForeColor = System.Drawing.Color.White;
-            this.Existencia.Location = new System.Drawing.Point(3, 100);
+            this.Existencia.Location = new System.Drawing.Point(7, 164);
             this.Existencia.Name = "Existencia";
             this.Existencia.Size = new System.Drawing.Size(90, 16);
             this.Existencia.TabIndex = 22;
@@ -235,12 +281,13 @@
             this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Regresar.Font = new System.Drawing.Font("Javanese Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regresar.ForeColor = System.Drawing.Color.LightGray;
-            this.Regresar.Location = new System.Drawing.Point(85, 305);
+            this.Regresar.Location = new System.Drawing.Point(89, 369);
             this.Regresar.Name = "Regresar";
             this.Regresar.Size = new System.Drawing.Size(108, 31);
             this.Regresar.TabIndex = 21;
             this.Regresar.Text = "Regresar";
             this.Regresar.UseVisualStyleBackColor = false;
+            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
             // label2
             // 
@@ -261,19 +308,20 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(76, 275);
+            this.btnGuardar.Location = new System.Drawing.Point(80, 339);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(127, 24);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Talla
             // 
             this.Talla.AutoSize = true;
             this.Talla.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Talla.ForeColor = System.Drawing.Color.White;
-            this.Talla.Location = new System.Drawing.Point(3, 61);
+            this.Talla.Location = new System.Drawing.Point(7, 125);
             this.Talla.Name = "Talla";
             this.Talla.Size = new System.Drawing.Size(93, 16);
             this.Talla.TabIndex = 1;
@@ -293,6 +341,7 @@
             this.btnEliminar.TabIndex = 39;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -308,53 +357,54 @@
             this.btnEditar.TabIndex = 38;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // txtCantRechazada
-            // 
-            this.txtCantRechazada.Location = new System.Drawing.Point(118, 206);
-            this.txtCantRechazada.Name = "txtCantRechazada";
-            this.txtCantRechazada.Size = new System.Drawing.Size(138, 20);
-            this.txtCantRechazada.TabIndex = 30;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 210);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 16);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Cantidad Rechazada:";
-            // 
-            // txtCantAceptada
-            // 
-            this.txtCantAceptada.Location = new System.Drawing.Point(118, 240);
-            this.txtCantAceptada.Name = "txtCantAceptada";
-            this.txtCantAceptada.Size = new System.Drawing.Size(138, 20);
-            this.txtCantAceptada.TabIndex = 32;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 244);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 16);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Cantidad Aceptada:";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // error
             // 
             this.error.ContainerControl = this;
+            // 
+            // txtidProductoDetalle
+            // 
+            this.txtidProductoDetalle.Location = new System.Drawing.Point(122, 91);
+            this.txtidProductoDetalle.Name = "txtidProductoDetalle";
+            this.txtidProductoDetalle.Size = new System.Drawing.Size(138, 20);
+            this.txtidProductoDetalle.TabIndex = 36;
+            // 
+            // txtidPedido
+            // 
+            this.txtidPedido.Location = new System.Drawing.Point(122, 55);
+            this.txtidPedido.Name = "txtidPedido";
+            this.txtidPedido.Size = new System.Drawing.Size(138, 20);
+            this.txtidPedido.TabIndex = 35;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(7, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 16);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "idProductoDetalle:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(7, 56);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 16);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "IdPedido:";
             // 
             // PedidoDetalleGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(836, 341);
+            this.ClientSize = new System.Drawing.Size(836, 402);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.panel1);
@@ -364,6 +414,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "PedidoDetalleGUI";
             this.Text = "PedidoDetalleGUI";
+            this.Load += new System.EventHandler(this.DetalleProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -398,5 +449,9 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.TextBox txtidProductoDetalle;
+        private System.Windows.Forms.TextBox txtidPedido;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

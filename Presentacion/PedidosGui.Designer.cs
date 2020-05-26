@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,10 +53,9 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.fecha = new System.Windows.Forms.Label();
             this.Regresar = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnPedidoDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // avanza
@@ -271,7 +269,6 @@
             this.txtCantidadPagada.Name = "txtCantidadPagada";
             this.txtCantidadPagada.Size = new System.Drawing.Size(138, 20);
             this.txtCantidadPagada.TabIndex = 14;
-            this.txtCantidadPagada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadPagada_KeyPress);
             // 
             // label5
             // 
@@ -290,7 +287,6 @@
             this.txtTotalPagar.Name = "txtTotalPagar";
             this.txtTotalPagar.Size = new System.Drawing.Size(138, 20);
             this.txtTotalPagar.TabIndex = 12;
-            this.txtTotalPagar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalPagar_KeyPress);
             // 
             // label3
             // 
@@ -358,9 +354,21 @@
             this.Regresar.UseVisualStyleBackColor = false;
             this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
-            // errorProvider1
+            // btnPedidoDetalle
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.btnPedidoDetalle.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnPedidoDetalle.FlatAppearance.BorderSize = 0;
+            this.btnPedidoDetalle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnPedidoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPedidoDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedidoDetalle.ForeColor = System.Drawing.Color.White;
+            this.btnPedidoDetalle.Location = new System.Drawing.Point(591, 400);
+            this.btnPedidoDetalle.Name = "btnPedidoDetalle";
+            this.btnPedidoDetalle.Size = new System.Drawing.Size(118, 24);
+            this.btnPedidoDetalle.TabIndex = 22;
+            this.btnPedidoDetalle.Text = "Pedido Detalle";
+            this.btnPedidoDetalle.UseVisualStyleBackColor = false;
+            this.btnPedidoDetalle.Click += new System.EventHandler(this.btnPedidoDetalle_Click);
             // 
             // PedidosGui
             // 
@@ -368,6 +376,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1017, 497);
+            this.Controls.Add(this.btnPedidoDetalle);
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -382,7 +391,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,6 +420,6 @@
         private System.Windows.Forms.DateTimePicker dateRegistro;
         private System.Windows.Forms.DateTimePicker dateRecepcion;
         private System.Windows.Forms.Button Regresar;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnPedidoDetalle;
     }
 }
