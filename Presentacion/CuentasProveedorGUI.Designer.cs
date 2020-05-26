@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,8 +48,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Regresar
@@ -60,7 +63,7 @@
             this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Regresar.Font = new System.Drawing.Font("Javanese Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regresar.ForeColor = System.Drawing.Color.LightGray;
-            this.Regresar.Location = new System.Drawing.Point(922, 419);
+            this.Regresar.Location = new System.Drawing.Point(736, 388);
             this.Regresar.Name = "Regresar";
             this.Regresar.Size = new System.Drawing.Size(108, 31);
             this.Regresar.TabIndex = 53;
@@ -79,7 +82,7 @@
             this.panel1.Controls.Add(this.txtnoCuenta);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnGuardar);
-            this.panel1.Location = new System.Drawing.Point(746, 45);
+            this.panel1.Location = new System.Drawing.Point(560, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 317);
             this.panel1.TabIndex = 52;
@@ -120,6 +123,7 @@
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(138, 20);
             this.txtBanco.TabIndex = 14;
+            this.txtBanco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBanco_KeyPress);
             // 
             // label5
             // 
@@ -138,6 +142,7 @@
             this.txtnoCuenta.Name = "txtnoCuenta";
             this.txtnoCuenta.Size = new System.Drawing.Size(138, 20);
             this.txtnoCuenta.TabIndex = 12;
+            this.txtnoCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnoCuenta_KeyPress);
             // 
             // label4
             // 
@@ -185,7 +190,7 @@
             this.avanza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.avanza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.avanza.ForeColor = System.Drawing.Color.White;
-            this.avanza.Location = new System.Drawing.Point(634, 324);
+            this.avanza.Location = new System.Drawing.Point(452, 324);
             this.avanza.Name = "avanza";
             this.avanza.Size = new System.Drawing.Size(38, 23);
             this.avanza.TabIndex = 50;
@@ -201,7 +206,7 @@
             this.retroceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.retroceder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retroceder.ForeColor = System.Drawing.Color.White;
-            this.retroceder.Location = new System.Drawing.Point(97, 324);
+            this.retroceder.Location = new System.Drawing.Point(74, 324);
             this.retroceder.Name = "retroceder";
             this.retroceder.Size = new System.Drawing.Size(38, 23);
             this.retroceder.TabIndex = 49;
@@ -249,7 +254,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(636, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(453, 252);
             this.dataGridView1.TabIndex = 48;
             // 
             // btnEliminar
@@ -284,12 +289,16 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // CuentasProveedorGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
-            this.ClientSize = new System.Drawing.Size(1047, 462);
+            this.ClientSize = new System.Drawing.Size(861, 427);
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -304,6 +313,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +337,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
