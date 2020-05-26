@@ -133,3 +133,20 @@ order by p.idProveedor offset (@pagina+-1)*10
 rows fetch next 10 rows only
 go
 
+drop function paginacion_PedidoDetalle
+/**
+Paginación Pedido Detalle
+**/
+create function paginacion_PedidoDetalle (@pagina int)
+returns table
+as return
+select p.idPedido as Pedido, f.idProductoDetalle as DetalleProductos, pd.cantPedida,pd.precioUnitario,pd.subtotal,pd.cantRecibida, pd.cantRechazada,pd.cantAceptada
+from PedidoDetalle pd
+join Pedidos p
+on pd.idPedido=p.idPedido
+join DetalleProductos f
+on f.idProductoDetalle=pd.idProductoDetalle
+where pd.idPedido=p.idPedido and f.idProductoDetalle=pd.idProductoDetalle and pd.estatus='A'
+order by pd.idProductoDetalle offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
