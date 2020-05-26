@@ -53,6 +53,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.fecha = new System.Windows.Forms.Label();
             this.Regresar = new System.Windows.Forms.Button();
+            this.btnPedidoDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -353,12 +354,29 @@
             this.Regresar.UseVisualStyleBackColor = false;
             this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
             // 
+            // btnPedidoDetalle
+            // 
+            this.btnPedidoDetalle.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnPedidoDetalle.FlatAppearance.BorderSize = 0;
+            this.btnPedidoDetalle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnPedidoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPedidoDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedidoDetalle.ForeColor = System.Drawing.Color.White;
+            this.btnPedidoDetalle.Location = new System.Drawing.Point(591, 400);
+            this.btnPedidoDetalle.Name = "btnPedidoDetalle";
+            this.btnPedidoDetalle.Size = new System.Drawing.Size(118, 24);
+            this.btnPedidoDetalle.TabIndex = 22;
+            this.btnPedidoDetalle.Text = "Pedido Detalle";
+            this.btnPedidoDetalle.UseVisualStyleBackColor = false;
+            this.btnPedidoDetalle.Click += new System.EventHandler(this.btnPedidoDetalle_Click);
+            // 
             // PedidosGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(1017, 497);
+            this.Controls.Add(this.btnPedidoDetalle);
             this.Controls.Add(this.Regresar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -402,5 +420,6 @@
         private System.Windows.Forms.DateTimePicker dateRegistro;
         private System.Windows.Forms.DateTimePicker dateRecepcion;
         private System.Windows.Forms.Button Regresar;
+        private System.Windows.Forms.Button btnPedidoDetalle;
     }
 }

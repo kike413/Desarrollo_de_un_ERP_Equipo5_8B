@@ -207,6 +207,14 @@ namespace Presentacion
                 MostrarPedidos();
             }
         }
+
+
+        private void btnPedidoDetalle_Click(object sender, EventArgs e)
+        {
+            PedidoDetalleGUI pdgui = new PedidoDetalleGUI();
+            pdgui.Show();
+            this.Hide();
+        }
     }
     }
 
