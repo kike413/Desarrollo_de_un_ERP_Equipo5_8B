@@ -150,3 +150,50 @@ where pd.idPedido=p.idPedido and f.idProductoDetalle=pd.idProductoDetalle and pd
 order by pd.idProductoDetalle offset (@pagina+-1)*10 
 rows fetch next 10 rows only
 go
+
+
+/**
+Paginación PagosCompras
+**/
+create function paginacion_PagosCompras (@pagina int)
+returns table
+as return
+select pc.idPago, pc.fecha, pc.importe,  p.idPedido as idPedido, fp.idFormaPago as idFormaPago, fp.nombre as nombre
+from PagosCompras pc
+join Pedidos p
+on pc.idPedido=p.idPedido
+join FormasPago fp
+on pc.idFormaPago=fp.idFormaPago
+where pc.idPedido=p.idPedido and pc.idFormaPago=fp.idFormaPago and pc.estatus='A'
+order by pc.idPago offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
+
+/**
+Paginación FormasPago
+**/
+create function paginacion_FormasPago (@pagina int)
+returns table
+as return
+select fp.idFormaPago, fp.nombre from FormasPago fp
+where fp.estatus='A'
+order by fp.idFormaPago offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go
+
+drop function paginacion_ContactosProveedor
+
+/**
+Paginación Contactos Proveedor
+**/
+create function paginacion_ContactosProveedor (@pagina int)
+returns table
+as return
+select cp.idContacto, cp.nombre,cp.telefono,cp.email, p.idProveedor as idProveedor
+from ContactosProveedor cp
+join Proveedores p
+on cp.idProveedor=p.idProveedor
+where cp.idProveedor=p.idProveedor and cp.estatus='A'
+order by cp.idContacto offset (@pagina+-1)*10 
+rows fetch next 10 rows only
+go

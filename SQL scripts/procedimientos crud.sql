@@ -333,7 +333,75 @@ go
 
 select * from PedidoDetalle
 
+---------------------------------------------------------------------------------Pagos compras
+/*procedimiento para mostrar en el COMBOBOX los pedidos*/
+create proc ListarPedido
+as
+select * from Pedidos where estatus='A' order by idPedido asc
+go
+
+/*procedimiento para mostrar en el COMBOBOX los empleados*/
+create proc ListarFormaPago
+as
+select * from FormasPago where estatus='A' order by idFormaPago asc
+go
+
+create proc EditarPagosCompras
+@fecha date,
+@importe float,
+@idPedido int,
+@idFormaPago int,
+@idPago int
+as
+update PagosCompras set fecha=@fecha, importe=@importe, idPedido=@idPedido, idFormaPago=@idFormaPago
+where idPago=@idPago 
+go
+
+create proc EliminarPagosCompras
+@idPago int
+as
+update PagosCompras set estatus='I' where idPago=@idPago
+go
+
+---------------------------------------------------------------------------------Formas de Pago
+create proc EditarFormasPago
+@nombre varchar(20),
+@idFormaPago int
+as
+update FormasPago set nombre=@nombre where idFormaPago=@idFormaPago
+go
+
+create proc EliminarFormasPago
+@idFormaPago int
+as
+update FormasPago set estatus='I' where idFormaPago=@idFormaPago
+go
 
 
+---------------------------------------------------------------------------------Contactos Proveedor
+create proc EditarContactosProveedor
+@nombre varchar (80),
+@telefono char (12),
+@email varchar (100),
+@idProveedor int,
+@idContacto int
+as
+update ContactosProveedor set nombre=@nombre, telefono=@telefono, email=@email, idProveedor=@idProveedor
+where idContacto=@idContacto 
+go
+
+create proc EliminarContactosProveedor
+@idContacto int,
+@idProveedor int
+as
+update ContactosProveedor set estatus='I' where idContacto=@idContacto and idProveedor=@idProveedor
+go
+
+drop proc EliminarContactosProveedor
 
 
+/*procedimiento para mostrar en el COMBOBOX los Proveedores*/
+create proc ListarProveedor
+as
+select * from Proveedores where estatus='A' order by idProveedor asc
+go
