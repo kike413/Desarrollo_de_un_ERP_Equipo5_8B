@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalGUI));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCuentas = new System.Windows.Forms.Button();
             this.btnPedido = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.brnCerrarSesion = new System.Windows.Forms.Button();
@@ -65,7 +66,7 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnCuentas = new System.Windows.Forms.Button();
+            this.btnPagos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -80,6 +81,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.btnPagos);
             this.panel1.Controls.Add(this.btnCuentas);
             this.panel1.Controls.Add(this.btnPedido);
             this.panel1.Controls.Add(this.panel2);
@@ -103,6 +105,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(877, 554);
             this.panel1.TabIndex = 15;
+            // 
+            // btnCuentas
+            // 
+            this.btnCuentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCuentas.FlatAppearance.BorderSize = 0;
+            this.btnCuentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnCuentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCuentas.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCuentas.Location = new System.Drawing.Point(24, 425);
+            this.btnCuentas.Name = "btnCuentas";
+            this.btnCuentas.Size = new System.Drawing.Size(110, 38);
+            this.btnCuentas.TabIndex = 27;
+            this.btnCuentas.Text = "Cuentas";
+            this.btnCuentas.UseVisualStyleBackColor = false;
+            this.btnCuentas.Click += new System.EventHandler(this.btnCuentas_Click);
             // 
             // btnPedido
             // 
@@ -491,21 +509,21 @@
             this.lineShape1.Y1 = 3;
             this.lineShape1.Y2 = 404;
             // 
-            // btnCuentas
+            // btnPagos
             // 
-            this.btnCuentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnCuentas.FlatAppearance.BorderSize = 0;
-            this.btnCuentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnCuentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCuentas.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCuentas.Location = new System.Drawing.Point(24, 425);
-            this.btnCuentas.Name = "btnCuentas";
-            this.btnCuentas.Size = new System.Drawing.Size(110, 38);
-            this.btnCuentas.TabIndex = 27;
-            this.btnCuentas.Text = "Cuentas";
-            this.btnCuentas.UseVisualStyleBackColor = false;
-            this.btnCuentas.Click += new System.EventHandler(this.btnCuentas_Click);
+            this.btnPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnPagos.FlatAppearance.BorderSize = 0;
+            this.btnPagos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnPagos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPagos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnPagos.Location = new System.Drawing.Point(256, 425);
+            this.btnPagos.Name = "btnPagos";
+            this.btnPagos.Size = new System.Drawing.Size(110, 38);
+            this.btnPagos.TabIndex = 28;
+            this.btnPagos.Text = "Pagos";
+            this.btnPagos.UseVisualStyleBackColor = false;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // PrincipalGUI
             // 
@@ -571,5 +589,6 @@
         private System.Windows.Forms.Button btnDetalles;
         private System.Windows.Forms.Button btnPedido;
         private System.Windows.Forms.Button btnCuentas;
+        private System.Windows.Forms.Button btnPagos;
     }
 }

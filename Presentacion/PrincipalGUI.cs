@@ -109,5 +109,12 @@ namespace Presentacion
             cuentas.Show();
             this.Hide();
         }
+
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            PagosComprasGUI Pagos = new PagosComprasGUI();
+            Pagos.Show();
+            this.Hide();
+        }
     }
 }

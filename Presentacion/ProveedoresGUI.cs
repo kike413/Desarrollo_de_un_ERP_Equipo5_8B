@@ -330,5 +330,12 @@ namespace Presentacion
             ProPro.Show();
             this.Hide();
         }
+
+        private void btnContactosProveedor_Click(object sender, EventArgs e)
+        {
+            ContactosProveedorGUI ConPro = new ContactosProveedorGUI();
+            ConPro.Show();
+            this.Hide();
+        }
     }
 }

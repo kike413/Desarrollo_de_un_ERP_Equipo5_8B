@@ -60,6 +60,7 @@
             this.buscador = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnProductosProveedor = new System.Windows.Forms.Button();
+            this.btnContactosProveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -425,12 +426,29 @@
             this.btnProductosProveedor.UseVisualStyleBackColor = false;
             this.btnProductosProveedor.Click += new System.EventHandler(this.btnProductosProveedor_Click);
             // 
+            // btnContactosProveedor
+            // 
+            this.btnContactosProveedor.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnContactosProveedor.FlatAppearance.BorderSize = 0;
+            this.btnContactosProveedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            this.btnContactosProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContactosProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContactosProveedor.ForeColor = System.Drawing.Color.White;
+            this.btnContactosProveedor.Location = new System.Drawing.Point(302, 420);
+            this.btnContactosProveedor.Name = "btnContactosProveedor";
+            this.btnContactosProveedor.Size = new System.Drawing.Size(156, 24);
+            this.btnContactosProveedor.TabIndex = 36;
+            this.btnContactosProveedor.Text = "Contactos Proveedor";
+            this.btnContactosProveedor.UseVisualStyleBackColor = false;
+            this.btnContactosProveedor.Click += new System.EventHandler(this.btnContactosProveedor_Click);
+            // 
             // ProveedoresGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(92)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnContactosProveedor);
             this.Controls.Add(this.btnProductosProveedor);
             this.Controls.Add(this.buscador);
             this.Controls.Add(this.label9);
@@ -484,6 +502,7 @@
         private System.Windows.Forms.TextBox buscador;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnProductosProveedor;
+        private System.Windows.Forms.Button btnContactosProveedor;
     }
 }
 
